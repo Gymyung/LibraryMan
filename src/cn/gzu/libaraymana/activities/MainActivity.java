@@ -1,5 +1,6 @@
-package cn.gzu.libaraymana;
+package cn.gzu.libaraymana.activities;
 
+import cn.gzu.libaraymana.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -11,7 +12,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		//Hello
+		//Hello World
 	}
 
 	@Override

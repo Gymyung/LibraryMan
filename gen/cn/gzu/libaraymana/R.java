@@ -26,15 +26,23 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
         public static final int icon_add=0x7f020003;
         public static final int icon_borrow=0x7f020004;
-        public static final int icon_modify=0x7f020005;
-        public static final int img_start_=0x7f020006;
+        public static final int icon_manage=0x7f020005;
+        public static final int icon_modify=0x7f020006;
+        public static final int icon_mpressum=0x7f020007;
+        public static final int icon_return=0x7f020008;
+        public static final int icon_seek=0x7f020009;
+        public static final int icon_set=0x7f02000a;
+        public static final int img_start_=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f080004;
-        public static final int button1=0x7f080003;
-        public static final int edit_password=0x7f080001;
-        public static final int img_start=0x7f080000;
-        public static final int tv_wjmm=0x7f080002;
+        public static final int action_settings=0x7f080007;
+        public static final int button1=0x7f080006;
+        public static final int edit_password=0x7f080004;
+        public static final int imageView1=0x7f080002;
+        public static final int img_start=0x7f080003;
+        public static final int title=0x7f080000;
+        public static final int tv_wjmm=0x7f080005;
+        public static final int welcome=0x7f080001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

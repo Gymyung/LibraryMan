@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <Button 
+        android:onClick="bookAddTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图书添加测试"/>
+    <Button 
+        android:onClick="bookDeleteTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图书删除测试"/>
+    <Button 
+        android:onClick="bookUpdateTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图书修改测试"/>
+    <Button 
+        android:onClick="bookQueryTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图书查询测试"/>
+    
+    
+    <Button 
+        android:onClick="userAddTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="借书人添加测试"/>
+    <Button 
+        android:onClick="userQueryTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="借书人查询测试"/>
+
+</LinearLayout>

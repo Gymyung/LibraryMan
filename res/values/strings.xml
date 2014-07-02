@@ -6,6 +6,15 @@
     <string name="hello_world">Hello world!</string>
     <string name="forget_password">忘记密码？</string>
     <string name="bms">贵州大学图书管理系统</string>
-    <string name="welcome">欢迎你： 管理员！</string>
+     <string name="welcome">欢迎你： 管理员！</string>
+
+    <string name="icon_add">添加图书</string>
+    <string name="icon_modify">修改图书</string>
+    <string name="icon_seek">查询检索</string>
+    <string name="icon_borrow">办理借书</string>  
+    <string name="icon_return">办理还书</string>
+    <string name="icon_manage">借书人管理</string>
+    <string name="icon_set">系统设置</string>
+    <string name="icon_impressum">版本信息</string>
 
 </resources>

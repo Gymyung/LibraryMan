@@ -54,14 +54,17 @@ public class EnterActivity extends BaseActivity {
 	@Override
 	protected void loadingDeal() {
 		userDbImpl = new UserDbImpl(this);
-		User user = new User();
-		user.setUsername("系统管理员");
-		user.setPassword("123");
-		user.setBookids("6-5");
-		user.setGender("男");
-		user.setUsercode(1207010209);
-		user.setPay(0f);
-		userDbImpl.save(user);
+		User user = userDbImpl.queryBookByUserName("系统管理员");
+		if(user == null){
+			user = new User();
+			user.setUsername("系统管理员");
+			user.setPassword("123");
+			user.setBookids("6-5");
+			user.setGender("男");
+			user.setUsercode(1207010209);
+			user.setPay(0f);
+			userDbImpl.save(user);
+		}
 		
 		sp = getSharedPreferences(Const.SharedPerName, Context.MODE_PRIVATE);
 		String username = sp.getString(Const.USERNAMEET, null);

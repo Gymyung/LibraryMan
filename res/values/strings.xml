@@ -16,5 +16,17 @@
     <string name="icon_manage">借书人管理</string>
     <string name="icon_set">系统设置</string>
     <string name="icon_impressum">版本信息</string>
+    <string name="input_your_account">输入您的账号</string>
+    <string name="input_your_password">输入您的密码</string>
+    <string name="login_right_now">立即登录</string>
+    <string name="main_copyright">图书管理系统  c 版权所有</string>
+    <string name="username_not_null">用户名不能为空！</string>
+    <string name="password_not_null">密码不能为空！</string>
+    <string name="username_or_password_error">用户名或密码不正确！</string>
+    <string name="user_not_exist">该用户不存在...</string>
+    <string name="login_success">登录成功！</string>
+    <string name="version_infomation">版本信息</string>
+    <string name="system_setting">系统设置</string>
+    <string name="welcome_you">"欢迎您： "</string>
 
 </resources>

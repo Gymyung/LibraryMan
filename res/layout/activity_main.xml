@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/main_title"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:background="#8AF7A4"
@@ -13,10 +13,10 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/welcome"
+        android:id="@+id/main_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/main_title"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:text="@string/welcome" />
@@ -24,71 +24,53 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@id/welcome"
+        android:layout_below="@id/main_welcome"
         android:layout_marginTop="10dp"
         android:orientation="vertical" >
 
         <LinearLayout
-            android:id="@+id/line1"
+            android:id="@+id/main_line1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal" >
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+                android:id="@+id/main_menuitem_addbook_ll"
+                style="@style/main_menuitem_layout">
 
                 <ImageView
-                    android:id="@+id/icon_add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icon_add" />
+                    style="@style/main_menuitem_img"
+                    android:src="@drawable/main_add" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                   style="@style/main_menuitem_tx"
                     android:text="@string/icon_add" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+                android:id="@+id/main_menuitem_editbook_ll"
+                style="@style/main_menuitem_layout">
 
                 <ImageView
-                    android:id="@+id/icon_modify"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icon_modify" />
+                   style="@style/main_menuitem_img"
+                    android:src="@drawable/main_edit" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/main_menuitem_tx"
                     android:text="@string/icon_modify" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+                android:id="@+id/main_menuitem_querybook_ll"
+                style="@style/main_menuitem_layout" >
 
                 <ImageView
-                    android:id="@+id/icon_seek"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icon_seek" />
+                    style="@style/main_menuitem_img"
+                    android:src="@drawable/main_query" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/main_menuitem_tx"
                     android:text="@string/icon_seek" />
             </LinearLayout>
         </LinearLayout>
@@ -101,60 +83,42 @@
             android:orientation="horizontal" >
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+                android:id="@+id/main_menuitem_jiebook_ll"
+                style="@style/main_menuitem_layout" >
 
                 <ImageView
-                    android:id="@+id/icon_borrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icon_borrow" />
+                    style="@style/main_menuitem_img"
+                    android:src="@drawable/main_jie" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/main_menuitem_tx"
                     android:text="@string/icon_borrow" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+                android:id="@+id/main_menuitem_huanbook_ll"
+               style="@style/main_menuitem_layout" >
 
                 <ImageView
-                    android:id="@+id/icon_return"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icon_return" />
+                    style="@style/main_menuitem_img"
+                    android:src="@drawable/main_huan" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/main_menuitem_tx"
                     android:text="@string/icon_return" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+                android:id="@+id/main_menuitem_usermana_ll"
+                style="@style/main_menuitem_layout" >
 
                 <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icon_seek" />
+                    style="@style/main_menuitem_img"
+                    android:src="@drawable/main_usermana" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/icon_add" />
+                    style="@style/main_menuitem_tx"
+                    android:text="借书人管理" />
             </LinearLayout>
         </LinearLayout>
 
@@ -166,22 +130,29 @@
             android:orientation="horizontal" >
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+                android:id="@+id/main_menuitem_setting_ll"
+                style="@style/main_menuitem_layout" >
 
                 <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icon_add" />
+                   style="@style/main_menuitem_img"
+                    android:src="@drawable/main_setting" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/icon_add" />
+                    style="@style/main_menuitem_tx"
+                    android:text="@string/system_setting" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menuitem_version_ll"
+                style="@style/main_menuitem_layout" >
+
+                <ImageView
+                    style="@style/main_menuitem_img"
+                    android:src="@drawable/main_version" />
+
+                <TextView
+                    style="@style/main_menuitem_tx"
+                    android:text="@string/version_infomation" />
             </LinearLayout>
 
             <LinearLayout
@@ -190,36 +161,6 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:orientation="vertical" >
-
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icon_modify" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/icon_add" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
-
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icon_seek" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/icon_add" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

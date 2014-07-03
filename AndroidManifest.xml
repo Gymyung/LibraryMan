@@ -27,6 +27,7 @@
         
         <activity android:name=".activities.MainActivity"
            android:launchMode="singleInstance"
+           android:theme="@android:style/Theme.Black.NoTitleBar"
            android:screenOrientation="portrait"></activity>
         
         <activity android:name=".test.BookDbImplTest"

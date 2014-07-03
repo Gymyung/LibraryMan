@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity {
 
 	@Override
 	protected void loadingDeal() {
-		welcomeTx.setText(R.string.welcome_you+Const.user.getUsername());
+		welcomeTx.setText("欢迎您： "+Const.user.getUsername());
 	}
 
 	@Override

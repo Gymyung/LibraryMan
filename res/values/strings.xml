@@ -41,5 +41,6 @@
     <string name="add">添  加</string>
     <string name="return_step">返  回</string>
     <string name="book_list">图书列表</string>
+    <string name="click_again_exit_program">再次点击退出程序！</string>
 
 </resources>

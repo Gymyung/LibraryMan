@@ -122,6 +122,7 @@ public final class R {
         public static final int book_list=0x7f070026;
         public static final int book_name=0x7f07001b;
         public static final int book_number=0x7f07001d;
+        public static final int click_again_exit_program=0x7f070027;
         public static final int exist_state=0x7f070021;
         public static final int forget_password=0x7f070003;
         public static final int hello_world=0x7f070002;

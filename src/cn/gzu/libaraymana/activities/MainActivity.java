@@ -1,6 +1,7 @@
 package cn.gzu.libaraymana.activities;
 
 import android.content.Intent;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -107,6 +108,27 @@ public class MainActivity extends BaseActivity {
 			
 			break;
 		}
+	}
+	
+	
+	private long firstClick;
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if(keyCode==event.KEYCODE_BACK){
+			long secondClick = System.currentTimeMillis();
+			if(secondClick - firstClick > 2000){
+				Toast.makeText(MainActivity.this, R.string.click_again_exit_program, Toast.LENGTH_SHORT).show();
+				firstClick = secondClick;
+				return true;
+			}else{
+				//此处添加退出整个应用的代码
+				finish();
+				return true;
+			}
+		}
+		
+		
+		return super.onKeyDown(keyCode, event);
 	}
 
 }

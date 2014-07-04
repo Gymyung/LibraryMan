@@ -4,7 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View.OnClickListener;
 import android.view.Window;
-
+/**
+ * Activity基类
+ * @author GymYung
+ * @since 2014-07-03 19:35
+ */
 public abstract class BaseActivity extends Activity implements OnClickListener{
 	/**
 	 * 1加载主布局界面

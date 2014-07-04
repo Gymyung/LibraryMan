@@ -10,7 +10,7 @@ public class Book {
 	/** 图书id **/
 	private int bookid;
 	/** 借书人id： **/
-	private int userid;
+	private int userid = 0;
 	/** 图书名称 **/
 	private String bookname;
 	/** 专业领域 **/
@@ -28,6 +28,19 @@ public class Book {
 	/** 借出时间 **/
 	@SuppressWarnings("deprecation")
 	private String date = new Date().toLocaleString();
+	
+	public Book(){}
+	
+	public Book(String bookname, String major, String code, float price,
+			String author, String press, int existstate) {
+		this.bookname = bookname;
+		this.major = major;
+		this.code = code;
+		this.price = price;
+		this.author = author;
+		this.press = press;
+		this.existstate = existstate;
+	}
 	public int getBookid() {
 		return bookid;
 	}

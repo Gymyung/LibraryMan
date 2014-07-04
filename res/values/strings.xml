@@ -22,11 +22,12 @@
     <string name="username_not_null">用户名不能为空！</string>
     <string name="password_not_null">密码不能为空！</string>
     <string name="username_or_password_error">用户名或密码不正确！</string>
-    <string name="user_not_exist">该用户不存在...</string>
+    <string name="user_not_exist">该用户不存在</string>
     <string name="login_success">登录成功！</string>
     <string name="version_infomation">版本信息</string>
     <string name="system_setting">系统设置</string>
     <string name="remenber_password">记住密码</string>
+
     <string name="ir">信息检索</string>
     <string name="btn_menu">menu</string>
     <string name="tv_bookrefer">图书查询</string>
@@ -39,5 +40,18 @@
     <string name="btn_ensure">确定</string>
     <string name="btn_cancle">取消</string>
     <string name="tv_checkbyauthor">按作者名查询</string>
+
+    <string name="add_book">添加图书</string>
+    <string name="book_name">图书名称：</string>
+    <string name="major">专业领域：</string>
+    <string name="book_number">图书编号：</string>
+    <string name="price">价\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020格：</string>
+    <string name="author">作\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020者：</string>
+    <string name="press">出\u0020\u0020版\u0020\u0020社：</string>
+    <string name="exist_state">流通状态：</string>
+    <string name="zai_jia">在架</string>
+    <string name="jie_chu">借出</string>
+    <string name="add">添  加</string>
+    <string name="return_step">返  回</string>
 
 </resources>

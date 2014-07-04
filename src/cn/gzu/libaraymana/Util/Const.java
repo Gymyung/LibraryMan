@@ -1,7 +1,11 @@
 package cn.gzu.libaraymana.Util;
 
 import cn.gzu.libaraymana.domain.User;
-
+/**
+ * 常量定义容器类
+ * @author GymYung
+ * @since 2014-07-03 19:35
+ */
 public class Const {
 	public static User user;
 	

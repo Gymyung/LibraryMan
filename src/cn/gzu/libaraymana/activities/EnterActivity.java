@@ -1,9 +1,12 @@
 package cn.gzu.libaraymana.activities;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -14,7 +17,11 @@ import cn.gzu.libaraymana.R;
 import cn.gzu.libaraymana.DAO.UserDbImpl;
 import cn.gzu.libaraymana.Util.Const;
 import cn.gzu.libaraymana.domain.User;
-
+/**
+ * 登陆界面
+ * @author GymYung
+ * @since 2014-07-03 20:35
+ */
 public class EnterActivity extends BaseActivity {
 	/** 输入用户名 **/
 	private EditText usernameEt;
@@ -30,6 +37,8 @@ public class EnterActivity extends BaseActivity {
 	private UserDbImpl userDbImpl;
 	
 	private SharedPreferences sp;
+	//创建电话管理
+	private TelephonyManager tm;
 
 	@Override
 	protected void setContentViewLayout() {
@@ -53,11 +62,12 @@ public class EnterActivity extends BaseActivity {
 
 	@Override
 	protected void loadingDeal() {
+		tm = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
 		userDbImpl = new UserDbImpl(this);
-		User user = userDbImpl.queryBookByUserName("系统管理员");
+		User user = userDbImpl.queryBookByUserName("adm");
 		if(user == null){
 			user = new User();
-			user.setUsername("系统管理员");
+			user.setUsername("adm");
 			user.setPassword("123");
 			user.setBookids("6-5");
 			user.setGender("男");
@@ -83,6 +93,8 @@ public class EnterActivity extends BaseActivity {
 		switch(view.getId()){
 		case R.id.enter_forget_password_tx:
 			//忘记密码
+			
+			sendSmsDialog();
 			
 			
 			break;
@@ -135,6 +147,23 @@ public class EnterActivity extends BaseActivity {
 			
 			break;
 		}
+	}
+	
+	
+	private void sendSmsDialog(){
+		AlertDialog.Builder builder = new AlertDialog.Builder(EnterActivity.this);
+		builder.setTitle("提示信息");
+		builder.setMessage("账号：adm，密码：123");
+		builder.setNeutralButton("知道了", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				
+			}
+		});
+		
+		builder.create().show();
 	}
 	
 }

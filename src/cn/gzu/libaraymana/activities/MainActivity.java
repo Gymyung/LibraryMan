@@ -1,5 +1,6 @@
 package cn.gzu.libaraymana.activities;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -59,17 +60,22 @@ public class MainActivity extends BaseActivity {
 
 	@Override
 	public void onClick(View view) {
+		Intent intent;
 		switch(view.getId()){
 		case R.id.main_menuitem_addbook_ll:
 			//添加图书
-			Toast.makeText(getBaseContext(), "Hello Test Successful!", Toast.LENGTH_SHORT).show();
+			intent = new Intent(MainActivity.this,AddBookActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 			
 			break;
 		case R.id.main_menuitem_editbook_ll:
 			//修改图书
-			Toast.makeText(getBaseContext(), "Hello Test Successful!", Toast.LENGTH_SHORT).show();
+			intent = new Intent(MainActivity.this,EditBookActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 					
-					break;
+			break;
 		case R.id.main_menuitem_querybook_ll:
 			//查询检索
 			Toast.makeText(getBaseContext(), "Hello Test Successful!", Toast.LENGTH_SHORT).show();

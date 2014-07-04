@@ -1,21 +1,27 @@
 package cn.gzu.libaraymana.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 import cn.gzu.libaraymana.R;
 import cn.gzu.libaraymana.DAO.BookDbImpl;
-import cn.gzu.libaraymana.Util.Const;
 import cn.gzu.libaraymana.domain.Book;
-
+/**
+ * 添加图书界面
+ * @author GymYung
+ * @since 2014-07-04 14:54
+ */
 public class AddBookActivity extends BaseActivity {
 	/** 返回上一步 **/
 	private ImageView previousImg;
+	/** 界面标题**/
+	private TextView titleTx;
 	/** 菜单 **/
 	private ImageView menuImg;
 	/** 图书名称 **/
@@ -51,6 +57,7 @@ public class AddBookActivity extends BaseActivity {
 	protected void findViewById() {
 		previousImg = (ImageView) findViewById(R.id.addbook_previous_img);
 		menuImg = (ImageView) findViewById(R.id.addbook_menu_img);
+		titleTx = (TextView) findViewById(R.id.addbook_title_tx);
 		nameEt = (EditText) findViewById(R.id.addbook_name_et);
 		majorEt = (EditText) findViewById(R.id.addbook_major_et);
 		bookNumEt = (EditText) findViewById(R.id.addbook_code_et);
@@ -74,6 +81,31 @@ public class AddBookActivity extends BaseActivity {
 	@Override
 	protected void loadingDeal() {
 		bookDbImpl = new BookDbImpl(this);
+		Bundle bundle = getIntent().getExtras();
+		if(bundle!=null){
+			if(bundle.getString("name")!=null){
+				nameEt.setText(bundle.getString("name"));
+				titleTx.setText("修改图书信息");
+			}
+			if(bundle.getString("major")!=null){
+				majorEt.setText(bundle.getString("major"));
+			}
+			if(bundle.getString("number")!=null){
+				bookNumEt.setText(bundle.getString("number"));
+			}
+			if(bundle.getFloat("price")>0){
+				priceEt.setText(bundle.getFloat("price")+"");
+			}
+			if(bundle.getString("author")!=null){
+				authorEt.setText(bundle.getString("author"));
+			}
+			if(bundle.getString("press")!=null){
+				pressEt.setText(bundle.getString("press"));
+			}
+			if(bundle.getInt("exist")>0){
+				existStateRb.setChecked(true);
+			}
+		}
 
 	}
 	
@@ -97,7 +129,7 @@ public class AddBookActivity extends BaseActivity {
 			break;
 		case R.id.addbook_return_btn:
 			
-			goToMainActivity();
+			finish();
 			
 			break;
 		}

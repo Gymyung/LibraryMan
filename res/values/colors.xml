@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="item_blue">#5231FE</color>
+    <color name="item_blue_apl">#5052AEFE</color>
     <color name="app_bg">#FBF4D6</color>
-    <color name="app_topmenu_bg">#84F7A5</color>
+    <color name="app_topmenu_bg">#0070B5</color>
     
     <color name="black">#212</color>
     <color name="white">#fef</color>

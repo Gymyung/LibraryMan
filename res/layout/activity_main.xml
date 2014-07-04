@@ -8,10 +8,10 @@
         android:id="@+id/main_title"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="#8AF7A4"
+        android:background="@color/app_topmenu_bg"
         android:gravity="center"
         android:text="@string/bms"
-        android:textColor="#000"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <TextView

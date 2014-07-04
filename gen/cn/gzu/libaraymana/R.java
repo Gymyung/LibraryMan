@@ -15,11 +15,12 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int app_bg=0x7f050001;
-        public static final int app_topmenu_bg=0x7f050002;
-        public static final int black=0x7f050003;
+        public static final int app_bg=0x7f050002;
+        public static final int app_topmenu_bg=0x7f050003;
+        public static final int black=0x7f050004;
         public static final int item_blue=0x7f050000;
-        public static final int white=0x7f050004;
+        public static final int item_blue_apl=0x7f050001;
+        public static final int white=0x7f050005;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -61,44 +62,52 @@ public final class R {
         public static final int main_version=0x7f02001a;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a001f;
-        public static final int addbook_add_btn=0x7f0a000b;
-        public static final int addbook_author_et=0x7f0a0006;
-        public static final int addbook_code_et=0x7f0a0004;
-        public static final int addbook_exist_rb=0x7f0a0009;
-        public static final int addbook_exist_state_rg=0x7f0a0008;
-        public static final int addbook_major_et=0x7f0a0003;
-        public static final int addbook_menu_img=0x7f0a0001;
-        public static final int addbook_name_et=0x7f0a0002;
-        public static final int addbook_not_exist_rb=0x7f0a000a;
-        public static final int addbook_press_et=0x7f0a0007;
+        public static final int action_settings=0x7f0a0025;
+        public static final int addbook_add_btn=0x7f0a000c;
+        public static final int addbook_author_et=0x7f0a0007;
+        public static final int addbook_code_et=0x7f0a0005;
+        public static final int addbook_exist_rb=0x7f0a000a;
+        public static final int addbook_exist_state_rg=0x7f0a0009;
+        public static final int addbook_major_et=0x7f0a0004;
+        public static final int addbook_menu_img=0x7f0a0002;
+        public static final int addbook_name_et=0x7f0a0003;
+        public static final int addbook_not_exist_rb=0x7f0a000b;
+        public static final int addbook_press_et=0x7f0a0008;
         public static final int addbook_previous_img=0x7f0a0000;
-        public static final int addbook_price_et=0x7f0a0005;
-        public static final int addbook_return_btn=0x7f0a000c;
-        public static final int enter_forget_password_tx=0x7f0a001d;
-        public static final int enter_input_account_et=0x7f0a001a;
-        public static final int enter_input_password_et=0x7f0a001b;
-        public static final int enter_login_btn=0x7f0a001e;
-        public static final int enter_logoimg=0x7f0a0019;
-        public static final int enter_rembpwd_cb=0x7f0a001c;
-        public static final int line1=0x7f0a0013;
-        public static final int main_line1=0x7f0a000f;
-        public static final int main_menuitem_addbook_ll=0x7f0a0010;
-        public static final int main_menuitem_editbook_ll=0x7f0a0011;
-        public static final int main_menuitem_huanbook_ll=0x7f0a0015;
-        public static final int main_menuitem_jiebook_ll=0x7f0a0014;
-        public static final int main_menuitem_querybook_ll=0x7f0a0012;
-        public static final int main_menuitem_setting_ll=0x7f0a0017;
-        public static final int main_menuitem_usermana_ll=0x7f0a0016;
-        public static final int main_menuitem_version_ll=0x7f0a0018;
-        public static final int main_title=0x7f0a000d;
-        public static final int main_welcome=0x7f0a000e;
+        public static final int addbook_price_et=0x7f0a0006;
+        public static final int addbook_return_btn=0x7f0a000d;
+        public static final int addbook_title_tx=0x7f0a0001;
+        public static final int booklist_author_tx=0x7f0a001d;
+        public static final int booklist_name_tx=0x7f0a001e;
+        public static final int editbook_listview=0x7f0a0010;
+        public static final int editbook_menu_img=0x7f0a000f;
+        public static final int editbook_previous_img=0x7f0a000e;
+        public static final int enter_forget_password_tx=0x7f0a0023;
+        public static final int enter_input_account_et=0x7f0a0020;
+        public static final int enter_input_password_et=0x7f0a0021;
+        public static final int enter_login_btn=0x7f0a0024;
+        public static final int enter_logoimg=0x7f0a001f;
+        public static final int enter_rembpwd_cb=0x7f0a0022;
+        public static final int line1=0x7f0a0017;
+        public static final int main_line1=0x7f0a0013;
+        public static final int main_menuitem_addbook_ll=0x7f0a0014;
+        public static final int main_menuitem_editbook_ll=0x7f0a0015;
+        public static final int main_menuitem_huanbook_ll=0x7f0a0019;
+        public static final int main_menuitem_jiebook_ll=0x7f0a0018;
+        public static final int main_menuitem_querybook_ll=0x7f0a0016;
+        public static final int main_menuitem_setting_ll=0x7f0a001b;
+        public static final int main_menuitem_usermana_ll=0x7f0a001a;
+        public static final int main_menuitem_version_ll=0x7f0a001c;
+        public static final int main_title=0x7f0a0011;
+        public static final int main_welcome=0x7f0a0012;
     }
     public static final class layout {
         public static final int activity_addbook=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int dbtest=0x7f030002;
-        public static final int enter_activity=0x7f030003;
+        public static final int activity_editbook=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int dbtest=0x7f030003;
+        public static final int editbok_booklist_item=0x7f030004;
+        public static final int enter_activity=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -110,6 +119,7 @@ public final class R {
         public static final int app_name=0x7f070000;
         public static final int author=0x7f07001f;
         public static final int bms=0x7f070004;
+        public static final int book_list=0x7f070026;
         public static final int book_name=0x7f07001b;
         public static final int book_number=0x7f07001d;
         public static final int exist_state=0x7f070021;

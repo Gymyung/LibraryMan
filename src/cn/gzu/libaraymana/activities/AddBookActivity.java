@@ -156,6 +156,7 @@ public class AddBookActivity extends BaseActivity {
 		
 		Book book = new Book(name, major, bookNum, price, author, press, existstate);
 		bookDbImpl.save(book);
+		Toast.makeText(getBaseContext(), "添加成功！", Toast.LENGTH_SHORT).show();
 		
 	}
 	

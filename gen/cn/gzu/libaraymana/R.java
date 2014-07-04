@@ -16,7 +16,10 @@ public final class R {
     }
     public static final class color {
         public static final int app_bg=0x7f050001;
+        public static final int app_topmenu_bg=0x7f050002;
+        public static final int black=0x7f050003;
         public static final int item_blue=0x7f050000;
+        public static final int white=0x7f050004;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -29,55 +32,87 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int btn_start=0x7f020000;
-        public static final int btn_start_pressed=0x7f020001;
-        public static final int enter_background=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int img_start_=0x7f020004;
-        public static final int input_login_btn_select=0x7f020005;
-        public static final int main_add=0x7f020006;
-        public static final int main_edit=0x7f020007;
-        public static final int main_huan=0x7f020008;
-        public static final int main_jie=0x7f020009;
-        public static final int main_layout_select=0x7f02000a;
-        public static final int main_query=0x7f02000b;
-        public static final int main_setting=0x7f02000c;
-        public static final int main_usermana=0x7f02000d;
-        public static final int main_version=0x7f02000e;
+        public static final int all_blue_button=0x7f020000;
+        public static final int all_blue_button_pressed=0x7f020001;
+        public static final int all_blue_button_select=0x7f020002;
+        public static final int all_input_edittext=0x7f020003;
+        public static final int all_input_edittext_pressed=0x7f020004;
+        public static final int all_input_edittext_select=0x7f020005;
+        public static final int all_menu=0x7f020006;
+        public static final int all_menu_pressed=0x7f020007;
+        public static final int all_menu_select=0x7f020008;
+        public static final int all_previous=0x7f020009;
+        public static final int all_previous_pressed=0x7f02000a;
+        public static final int all_previous_step_select=0x7f02000b;
+        public static final int btn_start=0x7f02000c;
+        public static final int btn_start_pressed=0x7f02000d;
+        public static final int enter_background=0x7f02000e;
+        public static final int ic_launcher=0x7f02000f;
+        public static final int img_start_=0x7f020010;
+        public static final int input_login_btn_select=0x7f020011;
+        public static final int main_add=0x7f020012;
+        public static final int main_edit=0x7f020013;
+        public static final int main_huan=0x7f020014;
+        public static final int main_jie=0x7f020015;
+        public static final int main_layout_select=0x7f020016;
+        public static final int main_query=0x7f020017;
+        public static final int main_setting=0x7f020018;
+        public static final int main_usermana=0x7f020019;
+        public static final int main_version=0x7f02001a;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0012;
-        public static final int enter_forget_password_tx=0x7f0a0010;
-        public static final int enter_input_account_et=0x7f0a000d;
-        public static final int enter_input_password_et=0x7f0a000e;
-        public static final int enter_login_btn=0x7f0a0011;
-        public static final int enter_logoimg=0x7f0a000c;
-        public static final int enter_rembpwd_cb=0x7f0a000f;
-        public static final int line1=0x7f0a0006;
-        public static final int main_line1=0x7f0a0002;
-        public static final int main_menuitem_addbook_ll=0x7f0a0003;
-        public static final int main_menuitem_editbook_ll=0x7f0a0004;
-        public static final int main_menuitem_huanbook_ll=0x7f0a0008;
-        public static final int main_menuitem_jiebook_ll=0x7f0a0007;
-        public static final int main_menuitem_querybook_ll=0x7f0a0005;
-        public static final int main_menuitem_setting_ll=0x7f0a000a;
-        public static final int main_menuitem_usermana_ll=0x7f0a0009;
-        public static final int main_menuitem_version_ll=0x7f0a000b;
-        public static final int main_title=0x7f0a0000;
-        public static final int main_welcome=0x7f0a0001;
+        public static final int action_settings=0x7f0a001f;
+        public static final int addbook_add_btn=0x7f0a000b;
+        public static final int addbook_author_et=0x7f0a0006;
+        public static final int addbook_code_et=0x7f0a0004;
+        public static final int addbook_exist_rb=0x7f0a0009;
+        public static final int addbook_exist_state_rg=0x7f0a0008;
+        public static final int addbook_major_et=0x7f0a0003;
+        public static final int addbook_menu_img=0x7f0a0001;
+        public static final int addbook_name_et=0x7f0a0002;
+        public static final int addbook_not_exist_rb=0x7f0a000a;
+        public static final int addbook_press_et=0x7f0a0007;
+        public static final int addbook_previous_img=0x7f0a0000;
+        public static final int addbook_price_et=0x7f0a0005;
+        public static final int addbook_return_btn=0x7f0a000c;
+        public static final int enter_forget_password_tx=0x7f0a001d;
+        public static final int enter_input_account_et=0x7f0a001a;
+        public static final int enter_input_password_et=0x7f0a001b;
+        public static final int enter_login_btn=0x7f0a001e;
+        public static final int enter_logoimg=0x7f0a0019;
+        public static final int enter_rembpwd_cb=0x7f0a001c;
+        public static final int line1=0x7f0a0013;
+        public static final int main_line1=0x7f0a000f;
+        public static final int main_menuitem_addbook_ll=0x7f0a0010;
+        public static final int main_menuitem_editbook_ll=0x7f0a0011;
+        public static final int main_menuitem_huanbook_ll=0x7f0a0015;
+        public static final int main_menuitem_jiebook_ll=0x7f0a0014;
+        public static final int main_menuitem_querybook_ll=0x7f0a0012;
+        public static final int main_menuitem_setting_ll=0x7f0a0017;
+        public static final int main_menuitem_usermana_ll=0x7f0a0016;
+        public static final int main_menuitem_version_ll=0x7f0a0018;
+        public static final int main_title=0x7f0a000d;
+        public static final int main_welcome=0x7f0a000e;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int dbtest=0x7f030001;
-        public static final int enter_activity=0x7f030002;
+        public static final int activity_addbook=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int dbtest=0x7f030002;
+        public static final int enter_activity=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f090000;
     }
     public static final class string {
         public static final int action_settings=0x7f070001;
+        public static final int add=0x7f070024;
+        public static final int add_book=0x7f07001a;
         public static final int app_name=0x7f070000;
+        public static final int author=0x7f07001f;
         public static final int bms=0x7f070004;
+        public static final int book_name=0x7f07001b;
+        public static final int book_number=0x7f07001d;
+        public static final int exist_state=0x7f070021;
         public static final int forget_password=0x7f070003;
         public static final int hello_world=0x7f070002;
         public static final int icon_add=0x7f070006;
@@ -90,17 +125,23 @@ public final class R {
         public static final int icon_set=0x7f07000c;
         public static final int input_your_account=0x7f07000e;
         public static final int input_your_password=0x7f07000f;
+        public static final int jie_chu=0x7f070023;
         public static final int login_right_now=0x7f070010;
         public static final int login_success=0x7f070016;
         public static final int main_copyright=0x7f070011;
+        public static final int major=0x7f07001c;
         public static final int password_not_null=0x7f070013;
+        public static final int press=0x7f070020;
+        public static final int price=0x7f07001e;
         public static final int remenber_password=0x7f070019;
+        public static final int return_step=0x7f070025;
         public static final int system_setting=0x7f070018;
         public static final int user_not_exist=0x7f070015;
         public static final int username_not_null=0x7f070012;
         public static final int username_or_password_error=0x7f070014;
         public static final int version_infomation=0x7f070017;
         public static final int welcome=0x7f070005;
+        public static final int zai_jia=0x7f070022;
     }
     public static final class style {
         /** 
@@ -133,5 +174,6 @@ public final class R {
         public static final int main_menuitem_img=0x7f080005;
         public static final int main_menuitem_layout=0x7f080003;
         public static final int main_menuitem_tx=0x7f080004;
+        public static final int oprate_blue_button=0x7f080006;
     }
 }

@@ -6,7 +6,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import cn.gzu.libaraymana.R;
 import cn.gzu.libaraymana.Util.Const;
-
+/**
+ * 主界面
+ * @author GymYung
+ * @since 2014-07-03 19:54
+ */
 public class MainActivity extends BaseActivity {
 	private TextView welcomeTx;
 	private LinearLayout addbookLl;

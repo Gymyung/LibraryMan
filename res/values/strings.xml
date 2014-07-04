@@ -28,5 +28,17 @@
     <string name="version_infomation">版本信息</string>
     <string name="system_setting">系统设置</string>
     <string name="remenber_password">记住密码</string>
+    <string name="add_book">添加图书</string>
+    <string name="book_name">图书名称：</string>
+    <string name="major">专业领域：</string>
+    <string name="book_number">图书编号：</string>
+    <string name="price">价\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020格：</string>
+    <string name="author">作\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020者：</string>
+    <string name="press">出\u0020\u0020版\u0020\u0020社：</string>
+    <string name="exist_state">流通状态：</string>
+    <string name="zai_jia">在架</string>
+    <string name="jie_chu">借出</string>
+    <string name="add">添  加</string>
+    <string name="return_step">返  回</string>
 
 </resources>

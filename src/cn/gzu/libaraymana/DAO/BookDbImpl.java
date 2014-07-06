@@ -74,7 +74,7 @@ public class BookDbImpl {
 			if(book.getPrice()>0) values.put("price", book.getPrice());
 			if(book.getAuthor()!=null&& !"".equals(book.getCode())) values.put("author", book.getAuthor());
 			if(book.getPress()!=null&& !"".equals(book.getCode())) values.put("press", book.getPress());
-			if(book.getExiststate()>0) values.put("existstate", book.getExiststate());
+			values.put("existstate", book.getExiststate());
 			if(book.getDate()!=null&& !"".equals(book.getCode())) values.put("date", book.getDate());
 			
 			db.update("book", values, " bookid = ? ", new String[]{bookid+""});
@@ -95,7 +95,7 @@ public class BookDbImpl {
 			if(c.moveToFirst()){
 				book = new Book();
 				book.setBookid(bookid);
-				book.setBookid(c.getInt(c.getColumnIndex("userid")));
+				book.setUserid(c.getInt(c.getColumnIndex("userid")));
 				book.setBookname(c.getString(c.getColumnIndex("bookname")));
 				book.setMajor(c.getString(c.getColumnIndex("major")));
 				book.setCode(c.getString(c.getColumnIndex("code")));
@@ -112,6 +112,35 @@ public class BookDbImpl {
 	}
 	
 	/**
+	 * 根据code查询图书信息
+	 * @param bookid	code
+	 */
+	public Book queryBookByCode(String code){
+		Book book = null;
+		SQLiteDatabase db = mOpenHelper.getReadableDatabase();
+		if(db.isOpen()){
+			Cursor c = db.query("book", new String[]{"author","userid","bookname","major","bookid","price","author","press","existstate","date"}, " code = ? ", new String[]{code}, null, null, null);
+			if(c.moveToFirst()){
+				book = new Book();
+				book.setBookid(c.getInt(c.getColumnIndex("bookid")));
+				book.setUserid(c.getInt(c.getColumnIndex("userid")));
+				book.setBookname(c.getString(c.getColumnIndex("bookname")));
+				book.setMajor(c.getString(c.getColumnIndex("major")));
+				book.setCode(code);
+				book.setPrice(c.getFloat(c.getColumnIndex("price")));
+				book.setAuthor(c.getString(c.getColumnIndex("author")));
+				book.setPress(c.getString(c.getColumnIndex("press")));
+				book.setExiststate(c.getInt(c.getColumnIndex("existstate")));
+				book.setDate(c.getString(c.getColumnIndex("date")));
+			}
+			c.close();
+			db.close();
+		}
+		return book;
+	}
+	
+	
+	/**
 	 * 根据作者名查询图书信息
 	 * @param bookname	作者名
 	 */
@@ -123,7 +152,7 @@ public class BookDbImpl {
 			if(c.moveToFirst()){
 				book = new Book();
 				book.setBookid(c.getInt(c.getColumnIndex("bookid")));
-				book.setBookid(c.getInt(c.getColumnIndex("userid")));
+				book.setUserid(c.getInt(c.getColumnIndex("userid")));
 				book.setBookname(c.getString(c.getColumnIndex("bookname")));
 				book.setMajor(c.getString(c.getColumnIndex("major")));
 				book.setCode(c.getString(c.getColumnIndex("code")));
@@ -151,7 +180,7 @@ public class BookDbImpl {
 			if(c.moveToFirst()){
 				book = new Book();
 				book.setBookid(c.getInt(c.getColumnIndex("bookid")));
-				book.setBookid(c.getInt(c.getColumnIndex("userid")));
+				book.setUserid(c.getInt(c.getColumnIndex("userid")));
 				book.setBookname(c.getString(c.getColumnIndex("bookname")));
 				book.setMajor(major);
 				book.setCode(c.getString(c.getColumnIndex("code")));
@@ -179,7 +208,7 @@ public class BookDbImpl {
 			if(c.moveToFirst()){
 				book = new Book();
 				book.setBookid(c.getInt(c.getColumnIndex("bookid")));
-				book.setBookid(c.getInt(c.getColumnIndex("userid")));
+				book.setUserid(c.getInt(c.getColumnIndex("userid")));
 				book.setBookname(bookname);
 				book.setMajor(c.getString(c.getColumnIndex("major")));
 				book.setCode(c.getString(c.getColumnIndex("code")));
@@ -211,7 +240,7 @@ public class BookDbImpl {
 		while(c.moveToNext()){
 			Book book = new Book();
 			book.setBookid(c.getInt(c.getColumnIndex("bookid")));
-			book.setBookid(c.getInt(c.getColumnIndex("userid")));
+			book.setUserid(c.getInt(c.getColumnIndex("userid")));
 			book.setBookname(c.getString(c.getColumnIndex("bookname")));
 			book.setMajor(c.getString(c.getColumnIndex("major")));
 			book.setCode(c.getString(c.getColumnIndex("code")));

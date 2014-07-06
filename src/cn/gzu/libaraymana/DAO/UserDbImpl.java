@@ -81,6 +81,7 @@ public class UserDbImpl {
 		return user;
 	}
 	
+	
 	/**
 	 * 根据借书人信息名查询借书人信息
 	 * @param username 借书人信息名
@@ -132,6 +133,38 @@ public class UserDbImpl {
 			db.close();
 		}
 		return user;
+	}
+	
+	/**
+	 * 修改借书人信息
+	 * @param book	图书信息
+	 */
+	public void update(int userid,User user){
+		SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+		if(db.isOpen()){
+			ContentValues values = new ContentValues();
+			
+			if(user.getBr_count()>0) values.put("br_count", user.getBr_count());
+			if(user.getGender()!=null && !"".equals(user.getGender())) values.put("gender", user.getGender());
+			if(user.getPassword()!=null && !"".equals(user.getPassword())) values.put("password", user.getPassword());
+			if(user.getPay()>0) values.put("pay", user.getPay());
+			if(user.getUsercode()>0) values.put("usercode", user.getUsercode());
+			if(user.getUsername()!=null && !"".equals(user.getUsername())) values.put("username", user.getUsername());
+			
+			if(user.getBookids()!=null && !"".equals(user.getBookids())){
+				String[] bookids = user.getBookids().split("-");
+				StringBuffer sb = new StringBuffer();
+				for(int i=0;i<bookids.length;i++){
+					if(i>=10) break;
+					sb.append(bookids[i]).append('-');
+				}
+				sb.deleteCharAt(sb.length()-1);
+				values.put("bookids", sb.toString());
+			}
+			
+			db.update("user", values, " userid = ? ", new String[]{userid+""});
+			db.close();
+		}
 	}
 	
 }

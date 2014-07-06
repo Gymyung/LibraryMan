@@ -37,6 +37,9 @@
         <activity android:name=".activities.EditBookActivity"
            android:screenOrientation="portrait"></activity>
         
+        <activity android:name=".activities.JieBookActivity"
+           android:screenOrientation="portrait"></activity>
+        
         <activity android:name=".test.BookDbImplTest"
             android:label="@string/app_name"></activity>
         

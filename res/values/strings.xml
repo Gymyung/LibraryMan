@@ -42,5 +42,8 @@
     <string name="return_step">返  回</string>
     <string name="book_list">图书列表</string>
     <string name="click_again_exit_program">再次点击退出程序！</string>
+    <string name="check">检测</string>
+    <string name="user_number">借书人学号：</string>
+    <string name="banli_jieshu">办理借书</string>
 
 </resources>

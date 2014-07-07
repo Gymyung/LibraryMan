@@ -1,5 +1,6 @@
 package cn.gzu.libaraymana.activities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Intent;
@@ -12,10 +13,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import cn.gzu.libaraymana.R;
 import cn.gzu.libaraymana.DAO.BookDbImpl;
 import cn.gzu.libaraymana.DAO.UserDbImpl;
 import cn.gzu.libaraymana.domain.Book;
+import cn.gzu.libaraymana.domain.ResultSet;
+import cn.gzu.libaraymana.domain.User;
 /**
  * 修改图书界面
  * @author GymYung
@@ -31,7 +35,7 @@ public class EditBookActivity extends BaseActivity {
 	/** 界面标题 **/
 	private TextView titleTx;
 	
-	private List<Book> books;
+	List<ResultSet> showInfos;
 	
 	private BookDbImpl bookDbImpl;
 	private UserDbImpl userDbImpl;
@@ -57,6 +61,7 @@ public class EditBookActivity extends BaseActivity {
 
 	@Override
 	protected void loadingDeal() {
+		showInfos = new ArrayList<ResultSet>();
 		bookDbImpl = new BookDbImpl(this);
 		userDbImpl = new UserDbImpl(this);
 		int searchWaysIndex = getIntent().getIntExtra("searchWaysIndex", 0);
@@ -78,7 +83,18 @@ public class EditBookActivity extends BaseActivity {
 	 */
 	private void dataFromEdit(){
 		titleTx.setText(R.string.book_list);
-		books = bookDbImpl.findAll();
+		final List<Book> books = bookDbImpl.findAll();
+		
+		if(showInfos != null){
+			showInfos.clear();
+		}
+		
+		for(Book book : books){
+			ResultSet resultSet = new ResultSet();
+			resultSet.setAuthor(book.getAuthor());
+			resultSet.setInformation(book.getBookname());
+			showInfos.add(resultSet);
+		}
 		
 		MyBookListAdapter adapter = new MyBookListAdapter();
 		bookListLv.setAdapter(adapter);
@@ -109,7 +125,88 @@ public class EditBookActivity extends BaseActivity {
 	/**
 	 * 数据来自信息查询 即点击条目跳转至信息显示
 	 */
-	private void dataFromQuery(int searchWaysIndex,String searchInfo){
+	private void dataFromQuery(final int searchWaysIndex,String searchInfo){
+		List<Book> books;
+		List<User> users;
+		
+		if(showInfos != null){
+			showInfos.clear();
+		}
+		
+		switch (searchWaysIndex) {
+		/** 图书查询方式 1按作者名查询 2按专业查询 3按图书名查询 4查询用户**/
+		case 1:
+			books = bookDbImpl.findAll();
+			for(Book book : books){
+				if(book.getAuthor().contains(searchInfo)){
+					ResultSet resultSet = new ResultSet();
+					resultSet.setAuthor(book.getAuthor());
+					resultSet.setInformation(book.getBookname());
+					showInfos.add(resultSet);
+				}
+			}
+			
+			break;
+		case 2:
+			books = bookDbImpl.findAll();
+			for(Book book : books){
+				if(book.getMajor().contains(searchInfo)){
+					ResultSet resultSet = new ResultSet();
+					resultSet.setAuthor(book.getAuthor());
+					resultSet.setInformation(book.getBookname());
+					showInfos.add(resultSet);
+				}
+			}
+			
+			break;
+		case 3:
+			books = bookDbImpl.findAll();
+			for(Book book : books){
+				if(book.getBookname().contains(searchInfo)){
+					ResultSet resultSet = new ResultSet();
+					resultSet.setAuthor(book.getAuthor());
+					resultSet.setInformation(book.getBookname());
+					showInfos.add(resultSet);
+				}
+			}
+			
+			break;
+		case 4:
+			users = userDbImpl.findAll();
+			for(User user : users){
+				if(user.getUsercode() == Integer.parseInt(searchInfo)){
+					ResultSet resultSet = new ResultSet();
+					resultSet.setAuthor(user.getUsercode()+"");
+					resultSet.setInformation(user.getUsername());
+					showInfos.add(resultSet);
+				}
+			}
+			
+			break;
+		}
+		
+		
+		MyBookListAdapter adapter = new MyBookListAdapter();
+		bookListLv.setAdapter(adapter);
+		bookListLv.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				ResultSet resultSet = showInfos.get(position);
+				
+				Toast.makeText(getBaseContext(), resultSet.getInformation()+" "+searchWaysIndex, Toast.LENGTH_SHORT).show();
+				
+				
+//				Intent intent = new Intent(EditBookActivity.this,AddBookActivity.class);
+//				startActivity(intent);
+//				overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
+				
+			}
+		});
+		
+		
+		
 		
 	}
 	
@@ -144,12 +241,12 @@ public class EditBookActivity extends BaseActivity {
 		
 		@Override
 		public int getCount() {
-			return books.size();
+			return showInfos.size();
 		}
 
 		@Override
 		public Object getItem(int position) {
-			return books.get(position);
+			return showInfos.get(position);
 		}
 
 		@Override
@@ -172,10 +269,10 @@ public class EditBookActivity extends BaseActivity {
 				view.setTag(viewHolder);
 			}
 			
-			Book book = books.get(position);
+			ResultSet resultSet = showInfos.get(position);
 			
-			viewHolder.authorTx.setText("【"+book.getAuthor()+"】");
-			viewHolder.nameTx.setText(book.getBookname());
+			viewHolder.authorTx.setText("【"+resultSet.getAuthor()+"】");
+			viewHolder.nameTx.setText(resultSet.getInformation());
 			
 			return view;
 		}}

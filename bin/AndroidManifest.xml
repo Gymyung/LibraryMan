@@ -29,22 +29,28 @@
         
         <activity android:name=".activities.MainActivity"
            android:launchMode="singleInstance"
-           android:screenOrientation="portrait"></activity>
+           android:screenOrientation="portrait"
+           android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         
         <activity android:name=".activities.AddBookActivity"
-           android:screenOrientation="portrait"></activity>
+           android:screenOrientation="portrait"
+           android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         
         <activity android:name=".activities.EditBookActivity"
-           android:screenOrientation="portrait"></activity>
+           android:screenOrientation="portrait"
+           android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         
         <activity android:name=".activities.JieBookActivity"
-           android:screenOrientation="portrait"></activity>
+           android:screenOrientation="portrait"
+           android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         
         <activity android:name=".activities.HuanBookActivity"
-           android:screenOrientation="portrait"></activity>
+           android:screenOrientation="portrait"
+           android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         
         <activity android:name=".activities.SearchInfoActivity"
-           android:screenOrientation="portrait"></activity>
+           android:screenOrientation="portrait"
+           android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         
         
         

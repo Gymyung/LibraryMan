@@ -234,8 +234,6 @@ public class BookDbImpl {
 		List<Book> books = new ArrayList<Book>();
 		SQLiteDatabase db = mOpenHelper.getReadableDatabase();
 		if(db.isOpen()){
-			//create table book(bookid integer primary key autoincrement,userid integer,bookname text,major text,code text,price real," +
-	        		//"author text,press text,existstate integer,date text
 		Cursor c = db.query("book", new String[]{"bookid","userid","bookname","major","code","price","author","press","existstate","date"}, null, null, null, null, null);
 		while(c.moveToNext()){
 			Book book = new Book();

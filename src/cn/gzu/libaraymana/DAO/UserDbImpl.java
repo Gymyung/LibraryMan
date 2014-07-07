@@ -1,5 +1,9 @@
 package cn.gzu.libaraymana.DAO;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import cn.gzu.libaraymana.domain.Book;
 import cn.gzu.libaraymana.domain.User;
 import android.content.ContentValues;
 import android.content.Context;
@@ -165,6 +169,34 @@ public class UserDbImpl {
 			db.update("user", values, " userid = ? ", new String[]{userid+""});
 			db.close();
 		}
+	}
+	
+	
+	/**
+	 * //得到所有的用户信息
+	 * @return 图书信息集合
+	 */
+	public List<User> findAll(){
+		List<User> users = new ArrayList<User>();
+		SQLiteDatabase db = mOpenHelper.getReadableDatabase();
+		if(db.isOpen()){
+		Cursor c = db.query("user", new String[]{"userid","username","gender","usercode","bookids","br_count","pay"}, null, null, null, null, null);
+		while(c.moveToNext()){
+			User user = new User();
+			user.setUserid(c.getInt(c.getColumnIndex("userid")));
+			user.setUsername(c.getString(c.getColumnIndex("username")));
+			user.setGender(c.getString(c.getColumnIndex("gender")));
+			user.setUsercode(c.getInt(c.getColumnIndex("usercode")));
+			user.setBookids(c.getString(c.getColumnIndex("bookids")));
+			user.setBr_count(c.getInt(c.getColumnIndex("br_count")));
+			user.setPay(c.getFloat(c.getColumnIndex("pay")));
+			
+			users.add(user);
+		}
+		c.close();
+		db.close();
+		}
+		return users;
 	}
 	
 }

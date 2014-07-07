@@ -59,6 +59,7 @@
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textSize="16sp"
+	                android:textColor="@color/black"
 	                android:text="@string/select_search_ways"/>
 	            <TextView 
 	                android:id="@+id/search_ways_show_tx"
@@ -87,6 +88,7 @@
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textSize="16sp"
+	                android:textColor="@color/black"
 	                android:text="@string/input_search_info"/>
 	            <EditText 
 	                android:id="@+id/search_book_searchinfo_et"
@@ -139,6 +141,7 @@
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textSize="16sp"
+	                android:textColor="@color/black"
 	                android:text="@string/input_user_code"/>
 	            <EditText 
 	                android:id="@+id/search_usercode_input_et"

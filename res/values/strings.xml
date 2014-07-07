@@ -6,12 +6,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="forget_password">忘记密码？</string>
     <string name="bms">贵州大学图书管理系统</string>
-     <string name="welcome">欢迎你： 管理员！</string>
-
+    <string name="welcome">欢迎你： 管理员！</string>
     <string name="icon_add">添加图书</string>
     <string name="icon_modify">修改图书</string>
     <string name="icon_seek">查询检索</string>
-    <string name="icon_borrow">办理借书</string>  
+    <string name="icon_borrow">办理借书</string>
     <string name="icon_return">办理还书</string>
     <string name="icon_manage">借书人管理</string>
     <string name="icon_set">系统设置</string>
@@ -23,11 +22,25 @@
     <string name="username_not_null">用户名不能为空！</string>
     <string name="password_not_null">密码不能为空！</string>
     <string name="username_or_password_error">用户名或密码不正确！</string>
-    <string name="user_not_exist">该用户不存在...</string>
+    <string name="user_not_exist">该用户不存在</string>
     <string name="login_success">登录成功！</string>
     <string name="version_infomation">版本信息</string>
     <string name="system_setting">系统设置</string>
     <string name="remenber_password">记住密码</string>
+
+    <string name="ir">信息检索</string>
+    <string name="btn_menu">menu</string>
+    <string name="tv_bookrefer">图书查询</string>
+    <string name="tv_borrow_refer">借书人查询</string>
+    <string name="tv_check">点击选择查询方式:</string>
+    <string name="tv_title_check">选择查询方式:</string>
+    <string name="tv_seekinfomation">查询信息</string>
+    <string name="btn_beginseek">开始查询</string>
+    <string name="tv_student_id">学号</string>
+    <string name="btn_ensure">确定</string>
+    <string name="btn_cancle">取消</string>
+    <string name="tv_checkbyauthor">按作者名查询</string>
+
     <string name="add_book">添加图书</string>
     <string name="book_name">图书名称：</string>
     <string name="major">专业领域：</string>

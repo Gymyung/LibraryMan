@@ -8,10 +8,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import cn.gzu.libaraymana.R;
 import cn.gzu.libaraymana.DAO.BookDbImpl;
 import cn.gzu.libaraymana.domain.Book;
+//github.com/Gymyung/LibraryMan.git
+import android.widget.Toast;
 /**
  * 添加图书界面
  * @author GymYung

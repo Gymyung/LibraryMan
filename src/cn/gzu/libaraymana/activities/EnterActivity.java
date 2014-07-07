@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
@@ -38,8 +37,6 @@ public class EnterActivity extends BaseActivity {
 	private UserDbImpl userDbImpl;
 	
 	private SharedPreferences sp;
-	//创建电话管理
-	private TelephonyManager tm;
 
 	@Override
 	protected void setContentViewLayout() {
@@ -63,7 +60,6 @@ public class EnterActivity extends BaseActivity {
 
 	@Override
 	protected void loadingDeal() {
-		tm = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
 		userDbImpl = new UserDbImpl(this);
 		User user = userDbImpl.queryBookByUserName("adm");
 		if(user == null){

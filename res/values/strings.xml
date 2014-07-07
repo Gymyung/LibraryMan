@@ -45,5 +45,21 @@
     <string name="check">检测</string>
     <string name="user_number">借书人学号：</string>
     <string name="banli_jieshu">办理借书</string>
+    <string name="banli_huanshu">办理还书</string>
+    <string name="jiaona_fakuan">缴纳罚款</string>
+    <string name="confirm_banli_huanshu">确认办理还书</string>
+    <string name="information_search">信息检索</string>
+    <string name="search_book">查询图书</string>
+    <string name="select_search_ways">选择查询方式：</string>
+    <string name="search_by_author">按作者名查询</string>
+    <string name="change">切换</string>
+    <string name="input_search_info">输入查询信息：</string>
+    <string name="start_search_book">开始查询图书</string>
+    <string name="search_user">查询借书人</string>
+    <string name="input_user_code">输入借书人编号：</string>
+    <string name="start_search_user">开始查询借书人</string>
+    <string name="search_by_major">按专业领域查询</string>
+    <string name="search_by_bookname">按图书名称查询</string>
+    <string name="query_result_list">查询结果</string>
 
 </resources>

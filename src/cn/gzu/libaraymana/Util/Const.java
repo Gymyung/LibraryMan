@@ -14,4 +14,15 @@ public class Const {
 	public final static String USERNAMEET = "usernameet";
 	
 	public final static String PASSWORDET = "passwordet";
+	
+	public final static String FAKUANDAY = "faKuanDays";
+	
+	public final static String PRICEADAY = "priceDay";
+	
+	
+	/** 借书免费天数 **/
+	public final static int faKuanDays_default = 60;
+	/** 罚款价格（以天计算） **/
+	public final static float priceDay_default = 0.5f;
+	
 }

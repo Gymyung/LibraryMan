@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import cn.gzu.libaraymana.R;
 import cn.gzu.libaraymana.DAO.BookDbImpl;
+import cn.gzu.libaraymana.DAO.UserDbImpl;
 import cn.gzu.libaraymana.domain.Book;
 /**
  * 修改图书界面
@@ -25,10 +26,15 @@ public class EditBookActivity extends BaseActivity {
 	private ImageView previousImg;
 	/** 菜单 **/
 	private ImageView menuImg;
-	
+	/** 数据列表 **/
 	private ListView bookListLv;
+	/** 界面标题 **/
+	private TextView titleTx;
 	
 	private List<Book> books;
+	
+	private BookDbImpl bookDbImpl;
+	private UserDbImpl userDbImpl;
 
 	@Override
 	protected void setContentViewLayout() {
@@ -39,6 +45,7 @@ public class EditBookActivity extends BaseActivity {
 	protected void findViewById() {
 		previousImg = (ImageView) findViewById(R.id.editbook_previous_img);
 		menuImg = (ImageView) findViewById(R.id.editbook_menu_img);
+		titleTx = (TextView) findViewById(R.id.editbook_title_tx);
 		bookListLv = (ListView) findViewById(R.id.editbook_listview);
 	}
 
@@ -50,7 +57,27 @@ public class EditBookActivity extends BaseActivity {
 
 	@Override
 	protected void loadingDeal() {
-		BookDbImpl bookDbImpl = new BookDbImpl(this);
+		bookDbImpl = new BookDbImpl(this);
+		userDbImpl = new UserDbImpl(this);
+		int searchWaysIndex = getIntent().getIntExtra("searchWaysIndex", 0);
+		
+		if(searchWaysIndex == 0){
+			dataFromEdit();
+		}else{
+			titleTx.setText(R.string.query_result_list);
+			String searchInfo = getIntent().getStringExtra("bookInputInfo");
+			dataFromQuery(searchWaysIndex,searchInfo);
+		}
+		
+		
+	}
+	
+	
+	/**
+	 * 数据来自信息修改 即点击条目跳转至信息修改
+	 */
+	private void dataFromEdit(){
+		titleTx.setText(R.string.book_list);
 		books = bookDbImpl.findAll();
 		
 		MyBookListAdapter adapter = new MyBookListAdapter();
@@ -77,6 +104,15 @@ public class EditBookActivity extends BaseActivity {
 			}
 		});
 	}
+	
+	
+	/**
+	 * 数据来自信息查询 即点击条目跳转至信息显示
+	 */
+	private void dataFromQuery(int searchWaysIndex,String searchInfo){
+		
+	}
+	
 	
 	@Override
 	public void onClick(View view) {

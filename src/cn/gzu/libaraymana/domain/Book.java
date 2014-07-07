@@ -1,6 +1,5 @@
 package cn.gzu.libaraymana.domain;
 
-import java.util.Date;
 /**
  * 图书信息业务bean
  * @author Gym Yung
@@ -26,8 +25,7 @@ public class Book {
 	/** 存在状态  1在架 0借出 **/
 	private int existstate = 1;
 	/** 借出时间 **/
-	@SuppressWarnings("deprecation")
-	private String date = new Date().toLocaleString();
+	private long date = System.currentTimeMillis();
 	
 	public Book(){}
 	
@@ -95,12 +93,15 @@ public class Book {
 	public void setExiststate(int existstate) {
 		this.existstate = existstate;
 	}
-	public String getDate() {
+
+	public long getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+
+	public void setDate(long date) {
 		this.date = date;
 	}
+	
 	
 	
 }

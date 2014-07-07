@@ -177,7 +177,9 @@ public class MainActivity extends BaseActivity {
 			break;
 		case R.id.main_menuitem_querybook_ll:
 			//查询检索
-			Toast.makeText(getBaseContext(), "Hello Test Successful!", Toast.LENGTH_SHORT).show();
+			intent = new Intent(MainActivity.this,SearchInfoActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 			
 			break;
 		case R.id.main_menuitem_jiebook_ll:
@@ -189,7 +191,9 @@ public class MainActivity extends BaseActivity {
 			break;
 		case R.id.main_menuitem_huanbook_ll:
 			//办理还书
-			Toast.makeText(getBaseContext(), "Hello Test Successful!", Toast.LENGTH_SHORT).show();
+			intent = new Intent(MainActivity.this,HuanBookActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 			
 			break;
 		case R.id.main_menuitem_usermana_ll:
@@ -296,7 +300,7 @@ public class MainActivity extends BaseActivity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(keyCode==event.KEYCODE_BACK){
 			long secondClick = System.currentTimeMillis();
-			if(secondClick - firstClick > 2000){
+			if(secondClick - firstClick > 1000){
 				Toast.makeText(MainActivity.this, R.string.click_again_exit_program, Toast.LENGTH_SHORT).show();
 				firstClick = secondClick;
 				return true;

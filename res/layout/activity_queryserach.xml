@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+     android:orientation="vertical">
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="45dp"
+	        android:orientation="horizontal"
+	        android:layout_marginBottom="10dp"
+	        android:background="@color/app_topmenu_bg">
+	        <ImageView 
+	            android:id="@+id/search_previous_img"
+	            android:layout_width="55dp"
+	            android:layout_height="45dp"
+	            android:src="@drawable/all_previous_step_select"/>
+	        <TextView 
+	            android:id="@+id/search_title_tx"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/information_search"
+	            android:textSize="20sp"
+	            android:layout_weight="7"
+	            android:gravity="center"
+	            android:layout_gravity="center_vertical"
+	            android:textColor="@color/white"
+	            />
+	        <ImageView 
+	            android:id="@+id/search_menu_img"
+	            android:layout_width="30dp"
+	            android:layout_height="30dp"
+	            android:layout_weight="1"
+	            android:layout_gravity="center_vertical"
+	            android:src="@drawable/all_menu_select"/>
+	    </LinearLayout>
+    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:layout_margin="5dp"
+	        android:padding="5dp"
+	        android:background="@color/small_blue_div_bg">
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="30dp"
+	            android:text="@string/search_book"
+	            android:gravity="center"
+	            android:textSize="20sp"
+	            android:textColor="@color/app_topmenu_bg"
+	            android:background="@drawable/child_title"/>
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:padding="3dp"
+	            android:orientation="horizontal">
+	            <TextView 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:textSize="16sp"
+	                android:text="@string/select_search_ways"/>
+	            <TextView 
+	                android:id="@+id/search_ways_show_tx"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                 android:layout_weight="1"
+	           	    android:textSize="14sp"
+	           	    android:textColor="@color/item_blue"
+	                android:text="@string/search_by_author"/>
+	            <Button 
+	                android:id="@+id/search_ways_select_btn"
+	                android:layout_width="0dp"
+		            android:layout_height="25dp"
+		            android:layout_weight="1"
+		            android:layout_marginRight="3dp"
+		            android:background="@drawable/all_blue_button_select"
+	                android:text="@string/change"/>
+	        </LinearLayout>
+	        
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:padding="3dp"
+	            android:orientation="horizontal">
+	            <TextView 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:textSize="16sp"
+	                android:text="@string/input_search_info"/>
+	            <EditText 
+	                android:id="@+id/search_book_searchinfo_et"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:inputType="text"
+	                android:background="@drawable/all_input_edittext_select"/>
+	        </LinearLayout>
+	        
+	        
+	        <Button
+	            android:id="@+id/search_book_start_btn"
+	           android:layout_gravity="bottom"
+	           android:layout_width="match_parent"
+	           android:layout_height="40dp"
+	           android:layout_margin="5dp"
+	           android:padding="5dp"
+	           android:background="@drawable/all_blue_button_select"
+	           android:textSize="22sp" 
+	           android:textColor="@color/white"
+	           android:text="@string/start_search_book" />
+	        
+	    </LinearLayout>
+	    
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	         android:layout_marginTop="20dp"
+	         android:layout_marginLeft="5dp"
+	         android:layout_marginRight="5dp"
+	        android:padding="5dp"
+	        android:background="@color/small_blue_div_bg">
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="30dp"
+	            android:text="@string/search_user"
+	            android:gravity="center"
+	            android:textSize="20sp"
+	            android:textColor="@color/app_topmenu_bg"
+	            android:background="@drawable/child_title"/>
+	        
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:padding="3dp"
+	            android:orientation="horizontal">
+	            <TextView 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:textSize="16sp"
+	                android:text="@string/input_user_code"/>
+	            <EditText 
+	                android:id="@+id/search_usercode_input_et"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:inputType="text"
+	                android:background="@drawable/all_input_edittext_select"/>
+	        </LinearLayout>
+	        
+	        
+	        <Button
+	            android:id="@+id/search_user_start_btn"
+	           android:layout_gravity="bottom"
+	           android:layout_width="match_parent"
+	           android:layout_height="40dp"
+	           android:layout_margin="5dp"
+	           android:padding="5dp"
+	           android:background="@drawable/all_blue_button_select"
+	           android:textSize="22sp" 
+	           android:textColor="@color/white"
+	           android:text="@string/start_search_user" />
+	        
+	    </LinearLayout>
+       
+
+</LinearLayout>

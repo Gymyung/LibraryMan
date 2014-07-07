@@ -1,9 +1,7 @@
 package cn.gzu.libaraymana.activities;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +11,7 @@ import android.widget.Toast;
 import cn.gzu.libaraymana.R;
 import cn.gzu.libaraymana.DAO.BookDbImpl;
 import cn.gzu.libaraymana.DAO.UserDbImpl;
-import cn.gzu.libaraymana.Util.CommonUtil;
+import cn.gzu.libaraymana.Util.DispacUtil;
 import cn.gzu.libaraymana.domain.Book;
 import cn.gzu.libaraymana.domain.User;
 /**
@@ -91,7 +89,7 @@ public class JieBookActivity extends BaseActivity {
 			break;
 		case R.id.jiebook_menu_img:
 			//返回主菜单
-			goToMainActivity();
+			DispacUtil.goToMainActivity(JieBookActivity.this);
 			
 			break;
 		case R.id.jiebook_booknumber_checkbtn:
@@ -109,7 +107,7 @@ public class JieBookActivity extends BaseActivity {
 			if(checkBook() && checkUser()){
 				if(user.getPay()==0 && user.getBr_count()<=10 && book.getExiststate()>0){
 					confirmBanliBtn.setText("正在办理中...");
-					book.setDate(CommonUtil.formatTime(new Date()));
+					book.setDate(System.currentTimeMillis());
 					book.setExiststate(book.getExiststate()-1);
 					book.setUserid(user.getUserid());
 					bookDbImpl.update(book.getBookid(), book);
@@ -121,9 +119,11 @@ public class JieBookActivity extends BaseActivity {
 					confirmBanliBtn.setText(R.string.banli_jieshu);
 					Toast.makeText(getBaseContext(), "办理借书成功！", Toast.LENGTH_SHORT).show();
 				}else if(user.getPay()>0){
-					Toast.makeText(getBaseContext(), "用户未缴清罚款，不能办理借书！", Toast.LENGTH_SHORT).show();
+					alertNoticeDialog("【"+user.getUsername()+"】未缴清罚款，请提醒他缴清罚款后再办理此业务！");
+					
 				}else if(user.getBr_count()>10){
-					Toast.makeText(getBaseContext(), "用户借书数量已超过10本！", Toast.LENGTH_SHORT).show();
+					alertNoticeDialog("【"+user.getUsername()+"】借书数量已超过10本，请提醒他归还部分图书后再办理此业务！");
+					
 				}else if(book.getExiststate()==0){
 					Toast.makeText(getBaseContext(), "【"+book.getBookname()+"】已经被借出!", Toast.LENGTH_SHORT).show();
 				}
@@ -136,13 +136,42 @@ public class JieBookActivity extends BaseActivity {
 		}
 	}
 	
+	
+	/** 提示信息对话框 **/
+	private void alertNoticeDialog(String message){
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setIcon(R.drawable.ic_launcher);
+		builder.setTitle("提示信息");
+		builder.setMessage(message);
+		builder.setNeutralButton("知道了", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				
+			}
+		});
+		
+		builder.create().show();
+	}
+	
+	
+	
+	
 	/** 检测图书信息 **/
 	private boolean checkBook(){
 		bookNumInfoTx.setText("正在检测中...");
 		if(bookNumEt.getText().toString()!=null && !"".equals(bookNumEt.getText().toString())){
 			book = bookDbImpl.queryBookByCode(bookNumEt.getText().toString().trim());
 			if(book!=null){
-				bookNumInfoTx.setText("【"+book.getAuthor()+"】 "+book.getBookname()+book.getExiststate());
+				String bookInfo = "";
+				if(book.getExiststate()>0){
+					bookInfo += "【"+book.getAuthor()+"】 "+book.getBookname()+"\n流通状态：在架";
+				}else{
+					bookInfo += "【"+book.getAuthor()+"】 "+book.getBookname()+"\n流通状态：已借出";
+				}
+				bookNumInfoTx.setText(bookInfo);
+				
 				return true;
 			}else{
 				bookNumInfoTx.setText("未检测到该图书...");
@@ -179,13 +208,4 @@ public class JieBookActivity extends BaseActivity {
 			return false;
 		}
 	}
-	
-	/** 回到主界面 **/
-	private void goToMainActivity(){
-		Intent intent = new Intent(JieBookActivity.this,MainActivity.class);
-		startActivity(intent);
-		overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
-		JieBookActivity.this.finish();
-	}
-
 }

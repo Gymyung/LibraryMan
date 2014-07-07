@@ -31,15 +31,15 @@ public class BookDbImpl {
 		if(db.isOpen()){
 			ContentValues values = new ContentValues();
 			
-			if(book.getUserid()>0) values.put("userid", book.getUserid());
-			if(book.getBookname()!=null&& !"".equals(book.getCode())) values.put("bookname", book.getBookname());
-			if(book.getMajor()!=null&& !"".equals(book.getCode())) values.put("major", book.getMajor());
+			values.put("userid", book.getUserid());
+			if(book.getBookname()!=null&& !"".equals(book.getBookname())) values.put("bookname", book.getBookname());
+			if(book.getMajor()!=null&& !"".equals(book.getMajor())) values.put("major", book.getMajor());
 			if(book.getCode()!=null && !"".equals(book.getCode())) values.put("code", book.getCode());
-			if(book.getPrice()>0) values.put("price", book.getPrice());
-			if(book.getAuthor()!=null&& !"".equals(book.getCode())) values.put("author", book.getAuthor());
-			if(book.getPress()!=null&& !"".equals(book.getCode())) values.put("press", book.getPress());
-			if(book.getExiststate()>0) values.put("existstate", book.getExiststate());
-			if(book.getDate()!=null&& !"".equals(book.getCode())) values.put("date", book.getDate());
+			values.put("price", book.getPrice());
+			if(book.getAuthor()!=null&& !"".equals(book.getAuthor())) values.put("author", book.getAuthor());
+			if(book.getPress()!=null&& !"".equals(book.getPress())) values.put("press", book.getPress());
+			values.put("existstate", book.getExiststate());
+			values.put("date", book.getDate());
 			
 			db.insert("book", "bookid", values);
 			db.close();
@@ -67,15 +67,15 @@ public class BookDbImpl {
 		if(db.isOpen()){
 			ContentValues values = new ContentValues();
 			
-			if(book.getUserid()>0) values.put("userid", book.getUserid());
-			if(book.getBookname()!=null&& !"".equals(book.getCode())) values.put("bookname", book.getBookname());
-			if(book.getMajor()!=null&& !"".equals(book.getCode())) values.put("major", book.getMajor());
+			values.put("userid", book.getUserid());
+			if(book.getBookname()!=null&& !"".equals(book.getBookname())) values.put("bookname", book.getBookname());
+			if(book.getMajor()!=null&& !"".equals(book.getMajor())) values.put("major", book.getMajor());
 			if(book.getCode()!=null && !"".equals(book.getCode())) values.put("code", book.getCode());
-			if(book.getPrice()>0) values.put("price", book.getPrice());
-			if(book.getAuthor()!=null&& !"".equals(book.getCode())) values.put("author", book.getAuthor());
-			if(book.getPress()!=null&& !"".equals(book.getCode())) values.put("press", book.getPress());
+			values.put("price", book.getPrice());
+			if(book.getAuthor()!=null&& !"".equals(book.getAuthor())) values.put("author", book.getAuthor());
+			if(book.getPress()!=null&& !"".equals(book.getPress())) values.put("press", book.getPress());
 			values.put("existstate", book.getExiststate());
-			if(book.getDate()!=null&& !"".equals(book.getCode())) values.put("date", book.getDate());
+			values.put("date", book.getDate());
 			
 			db.update("book", values, " bookid = ? ", new String[]{bookid+""});
 			db.close();
@@ -103,7 +103,7 @@ public class BookDbImpl {
 				book.setAuthor(c.getString(c.getColumnIndex("author")));
 				book.setPress(c.getString(c.getColumnIndex("press")));
 				book.setExiststate(c.getInt(c.getColumnIndex("existstate")));
-				book.setDate(c.getString(c.getColumnIndex("date")));
+				book.setDate(c.getLong(c.getColumnIndex("date")));
 			}
 			c.close();
 			db.close();
@@ -131,7 +131,7 @@ public class BookDbImpl {
 				book.setAuthor(c.getString(c.getColumnIndex("author")));
 				book.setPress(c.getString(c.getColumnIndex("press")));
 				book.setExiststate(c.getInt(c.getColumnIndex("existstate")));
-				book.setDate(c.getString(c.getColumnIndex("date")));
+				book.setDate(c.getLong(c.getColumnIndex("date")));
 			}
 			c.close();
 			db.close();
@@ -160,7 +160,7 @@ public class BookDbImpl {
 				book.setAuthor(author);
 				book.setPress(c.getString(c.getColumnIndex("press")));
 				book.setExiststate(c.getInt(c.getColumnIndex("existstate")));
-				book.setDate(c.getString(c.getColumnIndex("date")));
+				book.setDate(c.getLong(c.getColumnIndex("date")));
 			}
 			c.close();
 			db.close();
@@ -188,7 +188,7 @@ public class BookDbImpl {
 				book.setAuthor(c.getString(c.getColumnIndex("author")));
 				book.setPress(c.getString(c.getColumnIndex("press")));
 				book.setExiststate(c.getInt(c.getColumnIndex("existstate")));
-				book.setDate(c.getString(c.getColumnIndex("date")));
+				book.setDate(c.getLong(c.getColumnIndex("date")));
 			}
 			c.close();
 			db.close();
@@ -216,7 +216,7 @@ public class BookDbImpl {
 				book.setAuthor(c.getString(c.getColumnIndex("author")));
 				book.setPress(c.getString(c.getColumnIndex("press")));
 				book.setExiststate(c.getInt(c.getColumnIndex("existstate")));
-				book.setDate(c.getString(c.getColumnIndex("date")));
+				book.setDate(c.getLong(c.getColumnIndex("date")));
 			}
 			c.close();
 			db.close();
@@ -248,7 +248,7 @@ public class BookDbImpl {
 			book.setAuthor(c.getString(c.getColumnIndex("author")));
 			book.setPress(c.getString(c.getColumnIndex("press")));
 			book.setExiststate(c.getInt(c.getColumnIndex("existstate")));
-			book.setDate(c.getString(c.getColumnIndex("date")));
+			book.setDate(c.getLong(c.getColumnIndex("date")));
 			books.add(book);
 		}
 		c.close();

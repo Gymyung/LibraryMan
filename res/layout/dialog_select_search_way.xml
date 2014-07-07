@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/white" >
+    <LinearLayout 
+        android:id="@+id/dialog_select_way_author_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="2dp">
+        <TextView 
+            style="@style/dialog_item_textview"
+	        android:text="@string/search_by_author"
+	        />
+        <RadioButton 
+            android:id="@+id/dialog_select_way_author_rb"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:checked="true"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:id="@+id/dialog_select_way_major_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="2dp">
+       <TextView 
+	        style="@style/dialog_item_textview"
+	        android:text="@string/search_by_major"
+	        />
+        <RadioButton 
+            android:id="@+id/dialog_select_way_major_rb"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:id="@+id/dialog_select_way_name_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="2dp">
+        <TextView 
+	       style="@style/dialog_item_textview"
+	        android:text="@string/search_by_bookname"
+	        />
+        <RadioButton 
+            android:id="@+id/dialog_select_way_name_rb"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>

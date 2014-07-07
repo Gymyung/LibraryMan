@@ -31,10 +31,10 @@ public class UserDbImpl {
 			if(user.getUsername()!=null && !"".equals(user.getUsername())) values.put("username", user.getUsername());
 			if(user.getPassword()!=null && !"".equals(user.getPassword())) values.put("password", user.getPassword());
 			if(user.getGender()!=null&& !"".equals(user.getUsername())) values.put("gender", user.getGender());
-			if(user.getUsercode()>0) values.put("usercode", user.getUsercode());
+			values.put("usercode", user.getUsercode());
 			if(user.getBookids()!=null && !"".equals(user.getUsername())) values.put("bookids", user.getBookids());
-			if(user.getBr_count()>0) values.put("br_count", user.getBr_count());
-			if(user.getPay()>0) values.put("pay", user.getPay());
+			values.put("br_count", user.getBr_count());
+			values.put("pay", user.getPay());
 			
 			db.insert("user", "userid", values);
 			db.close();
@@ -144,11 +144,11 @@ public class UserDbImpl {
 		if(db.isOpen()){
 			ContentValues values = new ContentValues();
 			
-			if(user.getBr_count()>0) values.put("br_count", user.getBr_count());
+			values.put("br_count", user.getBr_count());
 			if(user.getGender()!=null && !"".equals(user.getGender())) values.put("gender", user.getGender());
 			if(user.getPassword()!=null && !"".equals(user.getPassword())) values.put("password", user.getPassword());
-			if(user.getPay()>0) values.put("pay", user.getPay());
-			if(user.getUsercode()>0) values.put("usercode", user.getUsercode());
+			values.put("pay", user.getPay());
+			values.put("usercode", user.getUsercode());
 			if(user.getUsername()!=null && !"".equals(user.getUsername())) values.put("username", user.getUsername());
 			
 			if(user.getBookids()!=null && !"".equals(user.getBookids())){

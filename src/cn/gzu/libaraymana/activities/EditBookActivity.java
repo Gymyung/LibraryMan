@@ -198,9 +198,11 @@ public class EditBookActivity extends BaseActivity {
 				Toast.makeText(getBaseContext(), resultSet.getInformation()+" "+searchWaysIndex, Toast.LENGTH_SHORT).show();
 				
 				
-//				Intent intent = new Intent(EditBookActivity.this,AddBookActivity.class);
-//				startActivity(intent);
-//				overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
+				Intent intent = new Intent(EditBookActivity.this,QueryResultActivity.class);
+				intent.putExtra("information", resultSet.getInformation());
+				intent.putExtra("searchWaysIndex", searchWaysIndex);
+				startActivity(intent);
+				overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 				
 			}
 		});

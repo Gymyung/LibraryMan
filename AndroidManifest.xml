@@ -52,7 +52,13 @@
            android:screenOrientation="portrait"
            android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         
+        <activity android:name=".activities.QueryResultActivity"
+           android:screenOrientation="portrait"
+           android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         
+        <activity android:name=".activities.SettingActivity"
+           android:screenOrientation="portrait"
+           android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         
         
         

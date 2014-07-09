@@ -12,10 +12,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.gzu.libaraymana.R;
-import cn.gzu.libaraymana.DAO.BookDbImpl;
-import cn.gzu.libaraymana.DAO.UserDbImpl;
 import cn.gzu.libaraymana.Util.DispacUtil;
-import cn.gzu.libaraymana.domain.Book;
 /**
  * 信息检索界面
  * @author GymYung

@@ -5,6 +5,7 @@
     <color name="app_bg">#FBF4D6</color>
     <color name="app_topmenu_bg">#0070B5</color>
     <color name="small_blue_div_bg">#8055BFFC</color>
+    <color name="setting_bg">#E1E6F6</color>
     
     <color name="black">#212</color>
     <color name="white">#fef</color>

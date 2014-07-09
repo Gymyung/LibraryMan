@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/setting_bg">
+    	<LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="45dp"
+	        android:orientation="horizontal"
+	        android:background="@color/app_topmenu_bg">
+	        <ImageView 
+	            android:id="@+id/setting_previous_img"
+	            android:layout_width="55dp"
+	            android:layout_height="45dp"
+	            android:src="@drawable/all_previous_step_select"/>
+	        <TextView 
+	            android:id="@+id/setting_title_tx"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="系统设置"
+	            android:textSize="20sp"
+	            android:layout_weight="7"
+	            android:gravity="center"
+	            android:layout_gravity="center_vertical"
+	            android:textColor="@color/white"
+	            />
+	        <ImageView 
+	            android:id="@+id/setting_menu_img"
+	            android:layout_width="30dp"
+	            android:layout_height="30dp"
+	            android:layout_weight="1"
+	            android:layout_gravity="center_vertical"
+	            android:src="@drawable/all_menu_select"/>
+	    </LinearLayout>
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout 
+        style="@style/setting_item_ll">
+        
+        <RelativeLayout 
+            android:id="@+id/setting_sysadm_show_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/setting_item_select"
+            >
+            <ImageView 
+                android:id="@+id/setting_user_logo_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_launcher"
+                android:layout_alignParentLeft="true"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/setting_user_logo_img"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="系统管理员"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dialog_add_to_arrow_image"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        
+        <include  android:layout_width="match_parent"
+            android:layout_height="1dp"
+            layout="@layout/delivde_line"/>
+        
+        <RelativeLayout 
+            android:id="@+id/setting_max_days_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:text="设置允许借阅最大天数"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dialog_add_to_arrow_image"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        
+        <include  android:layout_width="match_parent"
+            android:layout_height="1dp"
+            layout="@layout/delivde_line"/>
+        
+        <RelativeLayout 
+            android:id="@+id/setting_payment_price_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:text="设置超期罚款金额"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dialog_add_to_arrow_image"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+    
+    
+    <LinearLayout 
+        style="@style/setting_item_ll">
+        <RelativeLayout 
+            android:id="@+id/setting_logon_remepwd_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:text="登录时记住密码"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dialog_add_to_arrow_image"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        
+        <include  android:layout_width="match_parent"
+            android:layout_height="1dp"
+            layout="@layout/delivde_line"/>
+        
+        <RelativeLayout 
+            android:id="@+id/setting_auto_logon_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+               style="@style/setting_item_tx"
+                android:text="启动时自动登录"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dialog_add_to_arrow_image"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+    
+    
+    <LinearLayout 
+        style="@style/setting_item_ll">
+        <RelativeLayout 
+            android:id="@+id/setting_message_notice_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+               style="@style/setting_item_tx"
+                android:text="消息通知"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dialog_add_to_arrow_image"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        
+        <include  android:layout_width="match_parent"
+            android:layout_height="1dp"
+            layout="@layout/delivde_line"/>
+        
+        <RelativeLayout 
+            android:id="@+id/setting_function_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:text="辅助功能"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dialog_add_to_arrow_image"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        
+        <include  android:layout_width="match_parent"
+            android:layout_height="1dp"
+            layout="@layout/delivde_line"/>
+        
+        <RelativeLayout 
+            android:id="@+id/setting_security_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:text="安全与隐私"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dialog_add_to_arrow_image"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        style="@style/setting_item_ll"
+        android:layout_marginBottom="20dp">
+    	<RelativeLayout 
+    	    android:id="@+id/setting_version_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:text="版本信息"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dialog_add_to_arrow_image"
+                />
+       </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>    
+</ScrollView>
+</LinearLayout>
+

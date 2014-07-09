@@ -203,7 +203,9 @@ public class MainActivity extends BaseActivity {
 			break;
 		case R.id.main_menuitem_setting_ll:
 			//系统设置
-			Toast.makeText(getBaseContext(), "Hello Test Successful!", Toast.LENGTH_SHORT).show();
+			intent = new Intent(MainActivity.this,SettingActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 			
 			break;
 		case R.id.main_menuitem_version_ll:

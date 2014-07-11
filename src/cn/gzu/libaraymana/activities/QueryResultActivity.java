@@ -75,7 +75,7 @@ public class QueryResultActivity extends BaseActivity {
 	
 	/** 图书查询方式 4查询用户**/
 	private void queryUserByCode(){
-		User user = userDbImpl.queryBookByUserCode(Integer.parseInt(information));
+		User user = userDbImpl.queryBookByUserName(information);
 		
 		String info = "\n学号："+user.getUsercode()+"\n姓名："+user.getUsername()+"\n性别："+user.getGender()+"\n已借图书："+user.getBr_count()+"本\n欠款情况："+user.getPay()+"元\n";
 		
@@ -85,7 +85,7 @@ public class QueryResultActivity extends BaseActivity {
 			int index = 0;
 			for(String bookid : bookids){
 				Book book = bookDbImpl.queryBookById(Integer.parseInt(bookid));
-				if(book!=null) info += "    "+(++index)+"：  "+book.getBookname()+" 【"+book.getAuthor()+"】";
+				if(book!=null) info += "    "+(++index)+"：  "+book.getBookname()+" 【"+book.getAuthor()+"】\n";
 			}
 		}
 		

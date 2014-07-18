@@ -198,7 +198,9 @@ public class MainActivity extends BaseActivity {
 			break;
 		case R.id.main_menuitem_usermana_ll:
 			//借书人管理
-			Toast.makeText(getBaseContext(), "Hello Test Successful!", Toast.LENGTH_SHORT).show();
+			intent = new Intent(MainActivity.this,UserListActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 			
 			break;
 		case R.id.main_menuitem_setting_ll:
@@ -210,7 +212,9 @@ public class MainActivity extends BaseActivity {
 			break;
 		case R.id.main_menuitem_version_ll:
 			//版本信息
-			Toast.makeText(getBaseContext(), "Hello Test Successful!", Toast.LENGTH_SHORT).show();
+			intent = new Intent(MainActivity.this,VersionInfoActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 			
 			break;
 			

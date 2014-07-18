@@ -21,6 +21,21 @@ public class User {
 	private int br_count;
 	/** 罚款信息： **/
 	private float pay;
+	
+	
+	public User(String username, String password, String gender, int usercode) {
+		this.username = username;
+		this.password = password;
+		this.gender = gender;
+		this.usercode = usercode;
+	}
+
+
+	public User() {
+		super();
+	}
+	
+	
 	public int getUserid() {
 		return userid;
 	}

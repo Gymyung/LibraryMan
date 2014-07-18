@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    android:background="@color/app_bg"
+    >
+    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="45dp"
+	        android:orientation="horizontal"
+	        android:background="@color/app_topmenu_bg">
+	        <ImageView 
+	            android:id="@+id/version_previous_img"
+	            android:layout_width="55dp"
+	            android:layout_height="45dp"
+	            android:src="@drawable/all_previous_step_select"/>
+	        <TextView 
+	            android:id="@+id/version_title_tx"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="版本信息"
+	            android:textSize="20sp"
+	            android:layout_weight="7"
+	            android:gravity="center"
+	            android:layout_gravity="center_vertical"
+	            android:textColor="@color/white"
+	            />
+	        <ImageView 
+	            android:id="@+id/version_menu_img"
+	            android:layout_width="30dp"
+	            android:layout_height="30dp"
+	            android:layout_weight="1"
+	            android:layout_gravity="center_vertical"
+	            android:src="@drawable/all_menu_select"/>
+	    </LinearLayout>
+	    
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">   
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            android:layout_gravity="center_vertical"/>
+        <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:layout_marginLeft="30dp">
+	        <TextView 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="@color/item_blue"
+	            android:textSize="20sp"
+	            android:text="图书管理系统"/>
+	        <TextView 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="16sp"
+	            android:text="版本信息：1.0.1"/>
+	        <TextView 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="16sp"
+	            android:text="创建日期：2014-07-01"/>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+        style="@style/setting_item_ll">
+        
+        <RelativeLayout 
+            android:id="@+id/version_info11_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:textColor="@color/item_blue"
+                android:textSize="15sp"
+                android:text="应用简介"/>
+            </RelativeLayout>
+            
+        <include  android:layout_width="match_parent"
+            android:layout_height="1dp"
+            layout="@layout/delivde_line"/>
+            <RelativeLayout 
+            android:id="@+id/version_info1_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:textColor="@color/gray"
+                android:textSize="12sp"
+                android:text="@string/app_description"/>
+        
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+        style="@style/setting_item_ll">
+            <RelativeLayout 
+            android:id="@+id/version_info21_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:textSize="15sp"
+                android:textColor="@color/item_blue"
+                android:text="开发者信息："/>
+        </RelativeLayout>
+        
+            <include  android:layout_width="match_parent"
+            android:layout_height="1dp"
+            layout="@layout/delivde_line"/>
+        <RelativeLayout 
+            android:id="@+id/version_info2_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:textSize="12sp"
+                android:text="@string/develop_info"/>
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+        style="@style/setting_item_ll"
+        android:layout_marginBottom="20dp">
+            <RelativeLayout 
+            android:id="@+id/version_info31_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:textSize="15sp"
+                android:textColor="@color/item_blue"
+                android:text="致谢单位及个人："/>
+        </RelativeLayout>
+        
+            <include  android:layout_width="match_parent"
+            android:layout_height="1dp"
+            layout="@layout/delivde_line"/>
+        <RelativeLayout 
+            android:id="@+id/version_info3_rl"
+            style="@style/setting_item_rl">
+            <TextView 
+                style="@style/setting_item_tx"
+                android:textSize="12sp"
+                android:text="@string/develop_thank"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
+ </ScrollView>   
+</LinearLayout>

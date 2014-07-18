@@ -2,7 +2,6 @@ package cn.gzu.libaraymana.activities;
 
 import java.util.Date;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,8 +19,6 @@ import cn.gzu.libaraymana.domain.User;
 public class QueryResultActivity extends BaseActivity {
 	/** 返回上一步 **/
 	private ImageView previousImg;
-	/** 菜单 **/
-	private ImageView menuImg;
 	/** 查询结果显示 **/
 	private TextView infoShowTx;
 	/** 加载中提示信息 **/
@@ -42,7 +39,6 @@ public class QueryResultActivity extends BaseActivity {
 	@Override
 	protected void findViewById() {
 		previousImg = (ImageView) findViewById(R.id.query_result_previous_img);
-		menuImg = (ImageView) findViewById(R.id.query_result_menu_img);
 		infoShowTx = (TextView) findViewById(R.id.query_result_tx);
 		loadingTx = (TextView) findViewById(R.id.query_result_load_tx);
 	}
@@ -50,7 +46,6 @@ public class QueryResultActivity extends BaseActivity {
 	@Override
 	protected void setCompanentListener() {
 		previousImg.setOnClickListener(this);
-		menuImg.setOnClickListener(this);
 	}
 
 	@Override
@@ -85,7 +80,7 @@ public class QueryResultActivity extends BaseActivity {
 			int index = 0;
 			for(String bookid : bookids){
 				Book book = bookDbImpl.queryBookById(Integer.parseInt(bookid));
-				if(book!=null) info += "    "+(++index)+"：  "+book.getBookname()+" 【"+book.getAuthor()+"】\n";
+				if(book!=null) info += "\n    "+(++index)+"：  "+book.getBookname()+" 【"+book.getAuthor()+"】\n";
 			}
 		}
 		
@@ -129,20 +124,8 @@ public class QueryResultActivity extends BaseActivity {
 			finish();
 			
 			break;
-		case R.id.query_result_menu_img:
-			
-			goToMainActivity();
-			
-			break;
 		}
 	}
 	
 	
-	/** 回到主界面 **/
-	private void goToMainActivity(){
-		Intent intent = new Intent(QueryResultActivity.this,MainActivity.class);
-		startActivity(intent);
-		overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
-		QueryResultActivity.this.finish();
-	}
 }

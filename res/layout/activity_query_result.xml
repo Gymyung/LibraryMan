@@ -29,13 +29,6 @@
             android:layout_gravity="center_vertical"
             android:textColor="@color/white"
             />
-        <ImageView 
-            android:id="@+id/query_result_menu_img"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/all_menu_select"/>
     </LinearLayout>
 	    <TextView 
 	        android:id="@+id/query_result_tx"

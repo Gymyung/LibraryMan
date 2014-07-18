@@ -172,7 +172,9 @@ public class SettingActivity extends BaseActivity {
 			break;
 		case R.id.setting_version_rl:
 			
-			Toast.makeText(getBaseContext(), "setting_version_rl", Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent(SettingActivity.this,VersionInfoActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 			
 			break;
 		}

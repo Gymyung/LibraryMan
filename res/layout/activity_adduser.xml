@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/app_bg">
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@color/app_topmenu_bg">
+        <ImageView 
+            android:id="@+id/adduser_previous_img"
+            android:layout_width="55dp"
+            android:layout_height="45dp"
+            android:src="@drawable/all_previous_step_select"/>
+        <TextView 
+            android:id="@+id/adduser_title_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="借书人注册"
+            android:textSize="20sp"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            />
+        <ImageView 
+            android:id="@+id/adduser_menu_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/all_menu_select"/>
+    </LinearLayout>
+    
+    
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       android:orientation="horizontal">
+       <TextView 
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:text="姓　　名："
+           android:textSize="18sp"
+           android:textColor="@color/item_blue"/>
+       <EditText 
+           android:id="@+id/adduser_name_et"
+           android:layout_width="match_parent" 
+           android:layout_height="wrap_content"
+           android:inputType="text"
+           android:paddingLeft="5dp"
+           android:background="@drawable/all_input_edittext_select"/>
+   </LinearLayout> 
+   
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       android:orientation="horizontal">
+       <TextView 
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:text="学　　号："
+           android:textSize="18sp"
+           android:textColor="@color/item_blue"/>
+       <EditText 
+           android:id="@+id/adduser_usercode_et"
+           android:layout_width="match_parent" 
+           android:layout_height="wrap_content"
+           android:inputType="text"
+           android:paddingLeft="5dp"
+           android:background="@drawable/all_input_edittext_select"/>
+   </LinearLayout> 
+   
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       android:orientation="horizontal">
+       <TextView 
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:text="性　　别："
+           android:textSize="18sp"
+           android:textColor="@color/item_blue"/>
+       <RadioGroup 
+           android:id="@+id/adduser_gender_rg"
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+	       <RadioButton 
+	           android:id="@+id/adduser_man_rb"
+	           android:layout_width="wrap_content" 
+	           android:layout_height="wrap_content"
+	           android:checked="true"
+	           android:layout_marginRight="10dp"
+	           android:textColor="@color/black"
+	           android:text="男"/>
+	       <RadioButton 
+	           android:id="@+id/adduser_woman_rb"
+	           android:layout_width="wrap_content" 
+	           android:layout_height="wrap_content"
+	           android:textColor="@color/black"
+	           android:text="女"/>
+       </RadioGroup>
+   </LinearLayout>
+   
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       android:orientation="horizontal">
+       <TextView 
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:text="密　　码："
+           android:textSize="18sp"
+           android:textColor="@color/item_blue"/>
+       <EditText 
+           android:id="@+id/adduser_pwd_et"
+           android:layout_width="match_parent" 
+           android:layout_height="wrap_content"
+           android:inputType="numberSigned"
+           android:paddingLeft="5dp"
+           android:background="@drawable/all_input_edittext_select"/>
+   </LinearLayout>
+   
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       android:orientation="horizontal">
+       <TextView 
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:text="确认密码："
+           android:textSize="18sp"
+           android:textColor="@color/item_blue"/>
+       <EditText 
+           android:id="@+id/adduser_repwd_et"
+           android:layout_width="match_parent" 
+           android:layout_height="wrap_content"
+           android:inputType="numberSigned"
+           android:paddingLeft="5dp"
+           android:background="@drawable/all_input_edittext_select"/>
+   </LinearLayout>
+   
+   
+   <LinearLayout android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="100"></LinearLayout>
+   
+   
+   <LinearLayout 
+        android:layout_weight="1"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       android:layout_gravity="end"
+       android:paddingTop="30dp"
+       android:orientation="horizontal">
+       <Button
+            android:id="@+id/adduser_add_btn"
+            android:layout_marginRight="2dp"
+            style="@style/oprate_blue_button"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="确认注册" />
+       <Button
+            android:id="@+id/adduser_return_btn"
+            style="@style/oprate_blue_button"
+            android:layout_marginLeft="2dp" 
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="找回密码" />
+   </LinearLayout>
+   
+
+</LinearLayout>

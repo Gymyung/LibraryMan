@@ -23,6 +23,7 @@ public class RegisterUserActivity extends BaseActivity {
 	private EditText repwdEt;
 	
 	private RadioButton manRb;
+	@SuppressWarnings("unused")
 	private RadioButton womanRb;
 	
 	private Button addBtn;
@@ -107,40 +108,33 @@ public class RegisterUserActivity extends BaseActivity {
 		String rePassword = repwdEt.getText().toString().trim();
 		String gender = "男";
 		
-		if(username==null && "".equals(username)){
+		if(username==null || "".equals(username)){
 			Toast.makeText(getBaseContext(), "【姓名】不能为空！", Toast.LENGTH_SHORT).show();
 			nameEt.setFocusable(true);
 			return;
-		}
-		
-		if(userCode==null && "".equals(userCode)){
+		}else if(userCode==null || "".equals(userCode)){
 			Toast.makeText(getBaseContext(), "【学号】不能为空！", Toast.LENGTH_SHORT).show();
 			codeEt.setFocusable(true);
 			return;
-		}
-		
-		if(password==null && "".equals(password)){
+		}else if(password==null || "".equals(password)){
 			Toast.makeText(getBaseContext(), "【密码】不能为空！", Toast.LENGTH_SHORT).show();
 			pwdEt.setFocusable(true);
 			return;
-		}
-		
-		if(!password.equals(rePassword)){
+		}else if(!password.equals(rePassword)){
 			Toast.makeText(getBaseContext(), "两次输入密码不一致！", Toast.LENGTH_SHORT).show();
 			repwdEt.setFocusable(true);
 			return;
-		}
-		
-		if(manRb.isChecked()){
-			gender = "男";
 		}else{
-			gender = "女";
+			if(manRb.isChecked()){
+				gender = "男";
+			}else{
+				gender = "女";
+			}
+			User user = new User(username,password,gender,Integer.parseInt(userCode));
+			userDbImpl.save(user);
+			Toast.makeText(getBaseContext(), "注册成功！", Toast.LENGTH_SHORT).show();
+			this.finish();
 		}
-		
-		User user = new User(username,password,gender,Integer.parseInt(userCode));
-		userDbImpl.save(user);
-		Toast.makeText(getBaseContext(), "注册成功！", Toast.LENGTH_SHORT).show();
-		this.finish();
 	}
 
 	/** 回到主界面 **/

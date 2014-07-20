@@ -73,7 +73,7 @@
            android:id="@+id/adduser_usercode_et"
            android:layout_width="match_parent" 
            android:layout_height="wrap_content"
-           android:inputType="text"
+           android:inputType="number"
            android:paddingLeft="5dp"
            android:background="@drawable/all_input_edittext_select"/>
    </LinearLayout> 

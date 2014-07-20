@@ -3,12 +3,16 @@ package cn.gzu.libaraymana.activities;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -117,6 +121,38 @@ public class EditBookActivity extends BaseActivity {
 				startActivity(intent);
 				overridePendingTransition(R.anim.ad_enter_lefttoright, R.anim.ad_exit_righttoleft);
 				
+			}
+		});
+		
+		bookListLv.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				final Book book = books.get(position);
+				
+				AlertDialog.Builder builder = new AlertDialog.Builder(EditBookActivity.this);
+				builder.setTitle("提示信息");
+				builder.setMessage("您真的要删除该图书吗？");
+				builder.setPositiveButton("是的", new OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						bookDbImpl.delete(book.getBookname());
+						dialog.dismiss();
+						loadingDeal();
+					}
+				});
+				builder.setNegativeButton("取消", new OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+					}
+				});
+				
+				builder.create().show();
+				return false;
 			}
 		});
 	}

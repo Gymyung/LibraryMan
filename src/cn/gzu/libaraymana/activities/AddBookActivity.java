@@ -142,55 +142,43 @@ public class AddBookActivity extends BaseActivity {
 		String name = nameEt.getText().toString();
 		String major = majorEt.getText().toString();
 		String bookNum = bookNumEt.getText().toString();
-		float price = Float.valueOf(priceEt.getText().toString());
+		String price = priceEt.getText().toString();
 		String author = authorEt.getText().toString();
 		String press = pressEt.getText().toString();
 		int existstate = 1;
 		
-		if(name==null && "".equals(name)){
+		if(name==null || "".equals(name)){
 			Toast.makeText(getBaseContext(), "【图书名称】不能为空！", Toast.LENGTH_SHORT).show();
 			nameEt.setFocusable(true);
 			return;
-		}
-		
-		if(major==null && "".equals(major)){
+		}else if(major==null || "".equals(major)){
 			Toast.makeText(getBaseContext(), "【专业领域】不能为空！", Toast.LENGTH_SHORT).show();
 			majorEt.setFocusable(true);
 			return;
-		}
-		
-		if(bookNum==null && "".equals(bookNum)){
+		}else if(bookNum==null || "".equals(bookNum)){
 			Toast.makeText(getBaseContext(), "【图书编号】不能为空！", Toast.LENGTH_SHORT).show();
 			bookNumEt.setFocusable(true);
 			return;
-		}
-		
-		if(price<=0){
+		}else if(price==null || "".equals(price)){
 			Toast.makeText(getBaseContext(), "【单价】不能为空！", Toast.LENGTH_SHORT).show();
 			priceEt.setFocusable(true);
 			return;
-		}
-		
-		if(author==null && "".equals(author)){
+		}else if(author==null || "".equals(author)){
 			Toast.makeText(getBaseContext(), "【作者】不能为空！", Toast.LENGTH_SHORT).show();
 			authorEt.setFocusable(true);
 			return;
-		}
-		
-		if(press==null && "".equals(press)){
+		}else if(press==null || "".equals(press)){
 			Toast.makeText(getBaseContext(), "【出版社】不能为空！", Toast.LENGTH_SHORT).show();
 			pressEt.setFocusable(true);
 			return;
-		}
-		
-		if(notExistStateRb.isChecked()){
-			existstate = 0;
-		}
-		
-		Book book = new Book(name, major, bookNum, price, author, press, existstate);
-		bookDbImpl.save(book);
-		Toast.makeText(getBaseContext(), "添加成功！", Toast.LENGTH_SHORT).show();
-		
+		}else{
+			if(notExistStateRb.isChecked()){
+				existstate = 0;
+			}
+			Book book = new Book(name, major, bookNum, Float.valueOf(price), author, press, existstate);
+			bookDbImpl.save(book);
+			Toast.makeText(getBaseContext(), "添加成功！", Toast.LENGTH_SHORT).show();
+		} 
 	}
 	
 	/** 回到主界面 **/
